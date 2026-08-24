@@ -1,1 +1,0 @@
-# spiderbot.src.crawler package
