@@ -1,0 +1,427 @@
+---
+# Container Image Building and Pushing Tasks
+
+- name: Get the actual user running the playbook (when using sudo)
+  set_fact:
+    actual_user: "{{ lookup('env', 'SUDO_USER') }}"
+  when:
+    - ansible_user_id == 'root'
+    - lookup('env', 'SUDO_USER') | length > 0
+
+- name: Get the actual user running the playbook (when root without sudo)
+  set_fact:
+    actual_user: "{{ lookup('env', 'USER') | default('root', true) }}"
+  when:
+    - ansible_user_id == 'root'
+    - lookup('env', 'SUDO_USER') | length == 0
+
+- name: Set user facts for non-root execution
+  set_fact:
+    actual_user: "{{ ansible_user_id }}"
+  when: ansible_user_id != 'root'
+
+- name: Get home directory for the actual user
+  shell: "getent passwd {{ actual_user }} | cut -d: -f6"
+  register: user_home_result
+  changed_when: false
+
+- name: Set actual user home directory
+  set_fact:
+    actual_user_home: "{{ user_home_result.stdout }}"
+
+- name: Override paths with actual user's home directory
+  set_fact:
+    app_source_dir: "{{ actual_user_home }}/retailapp"
+    rag_source_dir: "{{ actual_user_home }}/retailapp/data-for-ai/rag-accelerator"
+    rag_retrieval_source_dir: "{{ actual_user_home }}/retailapp/data-for-ai/rag-retrieval-fastapi-server"
+
+- name: Validate required variables
+  assert:
+    that:
+      - backend_dir is defined
+      - frontend_dir is defined
+      - postgres_dir is defined
+      - docker_username is defined
+      - docker_password is defined
+    fail_msg: "Required variables for container image building are not set"
+    success_msg: "All required variables validated"
+
+- name: Check disk space before building
+  shell: df -h {{ app_source_dir }} | awk 'NR==2 {print $5}' | sed 's/%//'
+  register: disk_usage
+  changed_when: false
+  failed_when: disk_usage.stdout | int > 90
+
+- name: Display disk usage
+  debug:
+    msg: "Disk usage: {{ disk_usage.stdout }}%"
+
+- name: Check if user namespaces are enabled
+  shell: cat /proc/sys/user/max_user_namespaces
+  register: user_namespaces_check
+  changed_when: false
+  failed_when: false
+
+- name: Enable user namespaces if needed
+  shell: echo 15000 > /proc/sys/user/max_user_namespaces
+  become: yes
+  when: user_namespaces_check.stdout | int < 1
+  ignore_errors: yes
+
+- name: Ensure subuid and subgid are configured for user
+  shell: |
+    if ! grep -q "^{{ actual_user }}:" /etc/subuid; then
+      echo "{{ actual_user }}:100000:65536" >> /etc/subuid
+    fi
+    if ! grep -q "^{{ actual_user }}:" /etc/subgid; then
+      echo "{{ actual_user }}:100000:65536" >> /etc/subgid
+    fi
+  become: yes
+  changed_when: false
+  ignore_errors: yes
+
+- name: Create XDG_RUNTIME_DIR for user if it doesn't exist
+  file:
+    path: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    state: directory
+    owner: "{{ actual_user }}"
+    mode: '0700'
+  become: yes
+  ignore_errors: yes
+
+- name: Login to Docker Hub as actual user
+  shell: |
+    echo "{{ docker_password }}" | podman login {{ docker_registry }} --username {{ docker_username }} --password-stdin
+  become: yes
+  become_user: "{{ actual_user }}"
+  no_log: true
+  register: docker_login
+  changed_when: "'Login Succeeded' in docker_login.stdout or docker_login.rc == 0"
+  retries: 3
+  delay: 5
+  until: docker_login.rc == 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display Docker Hub login status
+  debug:
+    msg: "Successfully logged in to Docker Hub"
+
+- name: Record build start time
+  set_fact:
+    build_start_time: "{{ ansible_date_time.epoch }}"
+
+- name: Build PostgreSQL container image
+  command: >
+    podman build
+    -t {{ docker_registry }}/{{ docker_username }}/{{ postgres_image_name }}:{{ postgres_image_tag }}
+    {{ postgres_dir }}
+  args:
+    chdir: "{{ postgres_dir }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: postgres_build
+  changed_when: true
+  async: 600
+  poll: 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Build backend container image
+  command: >
+    podman build
+    -t {{ docker_registry }}/{{ docker_username }}/{{ backend_image_name }}:{{ backend_image_tag }}
+    {{ backend_dir }}
+  args:
+    chdir: "{{ backend_dir }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: backend_build
+  changed_when: true
+  async: 600
+  poll: 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Build frontend container image (initial build)
+  command: >
+    podman build
+    -t {{ docker_registry }}/{{ docker_username }}/{{ frontend_image_name }}:{{ frontend_image_tag }}
+    {{ frontend_dir }}
+  args:
+    chdir: "{{ frontend_dir }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: frontend_build
+  changed_when: true
+  async: 600
+  poll: 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display RAG source directory path
+  debug:
+    msg: "RAG source directory: {{ rag_source_dir }}"
+
+- name: Check if RAG source directory exists
+  stat:
+    path: "{{ rag_source_dir }}"
+  register: rag_dir_check
+
+- name: Display RAG directory check result
+  debug:
+    msg:
+      - "RAG directory exists: {{ rag_dir_check.stat.exists }}"
+      - "RAG directory path: {{ rag_source_dir }}"
+
+- name: Build RAG container image
+  command: >
+    podman build
+    -t {{ docker_registry }}/{{ docker_username }}/{{ rag_image_name }}:{{ rag_image_tag }}
+    {{ rag_source_dir }}
+  args:
+    chdir: "{{ rag_source_dir }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: rag_build
+  changed_when: true
+  async: 600
+  poll: 0
+  when: rag_dir_check.stat.exists
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display RAG retrieval source directory path
+  debug:
+    msg: "RAG retrieval source directory: {{ rag_retrieval_source_dir }}"
+
+- name: Check if RAG retrieval source directory exists
+  stat:
+    path: "{{ rag_retrieval_source_dir }}"
+  register: rag_retrieval_dir_check
+
+- name: Display RAG retrieval directory check result
+  debug:
+    msg:
+      - "RAG retrieval directory exists: {{ rag_retrieval_dir_check.stat.exists }}"
+      - "RAG retrieval directory path: {{ rag_retrieval_source_dir }}"
+
+- name: Build RAG retrieval container image
+  command: >
+    podman build
+    -t {{ docker_registry }}/{{ docker_username }}/{{ rag_retrieval_image_name }}:{{ rag_retrieval_image_tag }}
+    {{ rag_retrieval_source_dir }}
+  args:
+    chdir: "{{ rag_retrieval_source_dir }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: rag_retrieval_build
+  changed_when: true
+  async: 600
+  poll: 0
+  when: rag_retrieval_dir_check.stat.exists
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Wait for PostgreSQL build to complete
+  async_status:
+    jid: "{{ postgres_build.ansible_job_id }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: postgres_build_result
+  until: postgres_build_result.finished
+  retries: 60
+  delay: 10
+
+- name: Wait for backend build to complete
+  async_status:
+    jid: "{{ backend_build.ansible_job_id }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: backend_build_result
+  until: backend_build_result.finished
+  retries: 60
+  delay: 10
+
+- name: Wait for frontend build to complete
+  async_status:
+    jid: "{{ frontend_build.ansible_job_id }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: frontend_build_result
+  until: frontend_build_result.finished
+  retries: 60
+  delay: 10
+
+- name: Wait for RAG build to complete
+  async_status:
+    jid: "{{ rag_build.ansible_job_id }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: rag_build_result
+  until: rag_build_result.finished
+  retries: 60
+  delay: 10
+  when: rag_dir_check.stat.exists
+
+- name: Wait for RAG retrieval build to complete
+  async_status:
+    jid: "{{ rag_retrieval_build.ansible_job_id }}"
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: rag_retrieval_build_result
+  until: rag_retrieval_build_result.finished
+  retries: 60
+  delay: 10
+  when: rag_retrieval_dir_check.stat.exists
+
+- name: Display build completion status
+  debug:
+    msg:
+      - "All container images built successfully"
+      - "PostgreSQL: Built"
+      - "Backend: Built"
+      - "Frontend: Built"
+      - "RAG Accelerator: {{ 'Built' if rag_dir_check.stat.exists else 'Skipped (source not found)' }}"
+      - "RAG Retrieval: {{ 'Built' if rag_retrieval_dir_check.stat.exists else 'Skipped (source not found)' }}"
+
+- name: Push PostgreSQL image to Docker Hub
+  command: >
+    podman push {{ docker_registry }}/{{ docker_username }}/{{ postgres_image_name }}:{{ postgres_image_tag }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: postgres_push
+  changed_when: true
+  retries: 3
+  delay: 10
+  until: postgres_push.rc == 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display PostgreSQL push status
+  debug:
+    msg: "PostgreSQL image pushed to {{ docker_registry }}/{{ docker_username }}/{{ postgres_image_name }}:{{ postgres_image_tag }}"
+
+- name: Push backend image to Docker Hub
+  command: >
+    podman push {{ docker_registry }}/{{ docker_username }}/{{ backend_image_name }}:{{ backend_image_tag }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: backend_push
+  changed_when: true
+  retries: 3
+  delay: 10
+  until: backend_push.rc == 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display backend push status
+  debug:
+    msg: "Backend image pushed to {{ docker_registry }}/{{ docker_username }}/{{ backend_image_name }}:{{ backend_image_tag }}"
+
+- name: Push frontend image to Docker Hub
+  command: >
+    podman push {{ docker_registry }}/{{ docker_username }}/{{ frontend_image_name }}:{{ frontend_image_tag }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: frontend_push
+  changed_when: true
+  retries: 3
+  delay: 10
+  until: frontend_push.rc == 0
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display frontend push status
+  debug:
+    msg: "Frontend image pushed to {{ docker_registry }}/{{ docker_username }}/{{ frontend_image_name }}:{{ frontend_image_tag }}"
+
+- name: Push RAG image to Docker Hub
+  command: >
+    podman push {{ docker_registry }}/{{ docker_username }}/{{ rag_image_name }}:{{ rag_image_tag }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: rag_push
+  changed_when: true
+  retries: 3
+  delay: 10
+  until: rag_push.rc == 0
+  when: rag_dir_check.stat.exists
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display RAG push status
+  debug:
+    msg: "RAG image pushed to {{ docker_registry }}/{{ docker_username }}/{{ rag_image_name }}:{{ rag_image_tag }}"
+  when: rag_dir_check.stat.exists
+
+- name: Push RAG retrieval image to Docker Hub
+  command: >
+    podman push {{ docker_registry }}/{{ docker_username }}/{{ rag_retrieval_image_name }}:{{ rag_retrieval_image_tag }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: rag_retrieval_push
+  changed_when: true
+  retries: 3
+  delay: 10
+  until: rag_retrieval_push.rc == 0
+  when: rag_retrieval_dir_check.stat.exists
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display RAG retrieval push status
+  debug:
+    msg: "RAG retrieval image pushed to {{ docker_registry }}/{{ docker_username }}/{{ rag_retrieval_image_name }}:{{ rag_retrieval_image_tag }}"
+  when: rag_retrieval_dir_check.stat.exists
+
+- name: Clean up dangling images
+  command: podman image prune -f
+  become: yes
+  become_user: "{{ actual_user }}"
+  when: cleanup_images | default(true)
+  register: image_cleanup
+  changed_when: true
+  environment:
+    XDG_RUNTIME_DIR: "/run/user/{{ lookup('pipe', 'id -u ' + actual_user) }}"
+    HOME: "{{ actual_user_home }}"
+
+- name: Display cleanup status
+  debug:
+    msg: "Cleaned up dangling images"
+  when: cleanup_images | default(true)
+
+- name: Calculate build duration
+  set_fact:
+    build_duration: "{{ ansible_date_time.epoch | int - build_start_time | int }}"
+
+- name: Set container image facts
+  set_fact:
+    backend_full_image: "{{ docker_registry }}/{{ docker_username }}/{{ backend_image_name }}:{{ backend_image_tag }}"
+    frontend_full_image: "{{ docker_registry }}/{{ docker_username }}/{{ frontend_image_name }}:{{ frontend_image_tag }}"
+    postgres_full_image: "{{ docker_registry }}/{{ docker_username }}/{{ postgres_image_name }}:{{ postgres_image_tag }}"
+    rag_full_image: "{{ docker_registry }}/{{ docker_username }}/{{ rag_image_name }}:{{ rag_image_tag }}"
+    rag_retrieval_full_image: "{{ docker_registry }}/{{ docker_username }}/{{ rag_retrieval_image_name }}:{{ rag_retrieval_image_tag }}"
+
+- name: Display container images summary
+  debug:
+    msg:
+      - "Container images built and pushed successfully"
+      - "Backend: {{ backend_full_image }}"
+      - "Frontend: {{ frontend_full_image }}"
+      - "PostgreSQL: {{ postgres_full_image }}"
+      - "RAG Accelerator: {{ rag_full_image }}"
+      - "RAG Retrieval: {{ rag_retrieval_full_image }}"
+      - "Build duration: {{ build_duration }} seconds"
+
+# Made with Bob

@@ -1,0 +1,312 @@
+---
+# OpenShift Authentication and Namespace Setup Tasks
+
+- name: Get the actual user running the playbook (when using sudo)
+  set_fact:
+    actual_user: "{{ lookup('env', 'SUDO_USER') }}"
+  when:
+    - ansible_user_id == 'root'
+    - lookup('env', 'SUDO_USER') | length > 0
+
+- name: Get the actual user running the playbook (when root without sudo)
+  set_fact:
+    actual_user: "{{ lookup('env', 'USER') | default('root', true) }}"
+  when:
+    - ansible_user_id == 'root'
+    - lookup('env', 'SUDO_USER') | length == 0
+
+- name: Set user facts for non-root execution
+  set_fact:
+    actual_user: "{{ ansible_user_id }}"
+  when: ansible_user_id != 'root'
+
+- name: Get home directory for the actual user
+  shell: "getent passwd {{ actual_user }} | cut -d: -f6"
+  register: user_home_result
+  changed_when: false
+
+- name: Set actual user home directory
+  set_fact:
+    actual_user_home: "{{ user_home_result.stdout }}"
+
+- name: Verify OpenShift token is provided
+  assert:
+    that:
+      - openshift_token is defined
+      - openshift_token | length > 0
+    fail_msg: "OpenShift token is required. Set OC_TOKEN environment variable."
+    success_msg: "OpenShift token is provided"
+
+- name: Verify OpenShift server is provided
+  assert:
+    that:
+      - openshift_server is defined
+      - openshift_server | length > 0
+    fail_msg: "OpenShift server URL is required"
+    success_msg: "OpenShift server URL is provided"
+
+- name: Login to OpenShift cluster
+  command: >
+    oc login {{ openshift_server }}
+    --token={{ openshift_token }}
+    --insecure-skip-tls-verify=true
+  become: yes
+  become_user: "{{ actual_user }}"
+  no_log: false
+  register: oc_login
+  changed_when: "'Logged into' in oc_login.stdout"
+  failed_when: false
+
+- name: Display login error if failed
+  debug:
+    msg:
+      - "Login failed with return code: {{ oc_login.rc }}"
+      - "Error: {{ oc_login.stderr }}"
+      - "Output: {{ oc_login.stdout }}"
+  when: oc_login.rc != 0
+
+- name: Fail if login unsuccessful
+  fail:
+    msg: "OpenShift login failed. Please check credentials and server URL."
+  when: oc_login.rc != 0
+
+- name: Display OpenShift login status
+  debug:
+    msg: "Successfully logged in to OpenShift cluster"
+
+- name: Get current OpenShift user
+  command: oc whoami
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: oc_user
+  changed_when: false
+
+- name: Display current user
+  debug:
+    msg: "Logged in as: {{ oc_user.stdout }}"
+
+- name: Check if namespace exists
+  command: oc get namespace {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: namespace_check
+  failed_when: false
+  changed_when: false
+
+- name: Create namespace using oc adm new-project if it doesn't exist
+  command: oc adm new-project {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: namespace_created
+  when: namespace_check.rc != 0
+  failed_when: false
+
+- name: Display namespace creation status
+  debug:
+    msg: "{{ 'Namespace created: ' + namespace if namespace_created.changed else 'Namespace already exists: ' + namespace }}"
+
+- name: Add anyuid SCC to default service account
+  command: >
+    oc adm policy add-scc-to-user anyuid
+    -z default
+    -n {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: anyuid_scc_added
+  changed_when: "'added' in anyuid_scc_added.stdout or 'already' not in anyuid_scc_added.stdout"
+  failed_when: false
+
+- name: Display anyuid SCC configuration status
+  debug:
+    msg: "{{ 'anyuid SCC added to default service account' if anyuid_scc_added.changed else 'anyuid SCC already configured for default service account' }}"
+
+- name: Add privileged SCC to default service account
+  command: >
+    oc adm policy add-scc-to-user privileged
+    -z default
+    -n {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: privileged_scc_added
+  changed_when: "'added' in privileged_scc_added.stdout or 'already' not in privileged_scc_added.stdout"
+  failed_when: false
+
+- name: Display privileged SCC configuration status
+  debug:
+    msg: "{{ 'privileged SCC added to default service account' if privileged_scc_added.changed else 'privileged SCC already configured for default service account' }}"
+
+- name: Create ServiceAccount manifest from template
+  template:
+    src: serviceaccount.yaml.j2
+    dest: "{{ actual_user_home }}/.kube/serviceaccount.yaml"
+    owner: "{{ actual_user }}"
+    group: "{{ actual_user }}"
+    mode: '0644'
+  become: yes
+
+- name: Apply ServiceAccount
+  command: oc apply -f {{ actual_user_home }}/.kube/serviceaccount.yaml
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: serviceaccount_created
+  changed_when: "'created' in serviceaccount_created.stdout or 'configured' in serviceaccount_created.stdout"
+
+- name: Display ServiceAccount creation status
+  debug:
+    msg: "{{ 'ServiceAccount retail created/updated in namespace ' + namespace }}"
+
+- name: Create ClusterRole manifest from template
+  template:
+    src: clusterrole.yaml.j2
+    dest: "{{ actual_user_home }}/.kube/clusterrole.yaml"
+    owner: "{{ actual_user }}"
+    group: "{{ actual_user }}"
+    mode: '0644'
+  become: yes
+
+- name: Apply ClusterRole
+  command: oc apply -f {{ actual_user_home }}/.kube/clusterrole.yaml
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: clusterrole_created
+  changed_when: "'created' in clusterrole_created.stdout or 'configured' in clusterrole_created.stdout"
+
+- name: Display ClusterRole creation status
+  debug:
+    msg: "ClusterRole retail created/updated"
+
+- name: Create ClusterRoleBinding manifest from template
+  template:
+    src: clusterrolebinding.yaml.j2
+    dest: "{{ actual_user_home }}/.kube/clusterrolebinding.yaml"
+    owner: "{{ actual_user }}"
+    group: "{{ actual_user }}"
+    mode: '0644'
+  become: yes
+
+- name: Apply ClusterRoleBinding
+  command: oc apply -f {{ actual_user_home }}/.kube/clusterrolebinding.yaml
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: clusterrolebinding_created
+  changed_when: "'created' in clusterrolebinding_created.stdout or 'configured' in clusterrolebinding_created.stdout"
+
+- name: Display ClusterRoleBinding creation status
+  debug:
+    msg: "ClusterRoleBinding retail created/updated"
+
+- name: Add anyuid SCC to retail service account
+  command: >
+    oc adm policy add-scc-to-user anyuid
+    -z retail
+    -n {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: retail_anyuid_scc_added
+  changed_when: "'added' in retail_anyuid_scc_added.stdout or 'already' not in retail_anyuid_scc_added.stdout"
+  failed_when: false
+
+- name: Display retail ServiceAccount anyuid SCC status
+  debug:
+    msg: "{{ 'anyuid SCC added to retail service account' if retail_anyuid_scc_added.changed else 'anyuid SCC already configured for retail service account' }}"
+
+- name: Add privileged SCC to retail service account
+  command: >
+    oc adm policy add-scc-to-user privileged
+    -z retail
+    -n {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: retail_privileged_scc_added
+  changed_when: "'added' in retail_privileged_scc_added.stdout or 'already' not in retail_privileged_scc_added.stdout"
+  failed_when: false
+
+- name: Display retail ServiceAccount privileged SCC status
+  debug:
+    msg: "{{ 'privileged SCC added to retail service account' if retail_privileged_scc_added.changed else 'privileged SCC already configured for retail service account' }}"
+
+- name: Switch to target namespace
+  command: oc project {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: oc_project
+  changed_when: true
+
+- name: Display current project
+  debug:
+    msg: "Switched to namespace: {{ namespace }}"
+
+- name: Create Docker Hub secret for image pull
+  command: >
+    oc create secret docker-registry dockerhub-secret
+    --docker-server={{ docker_registry }}
+    --docker-username={{ docker_username }}
+    --docker-password={{ docker_password }}
+    --docker-email={{ docker_username }}@example.com
+    -n {{ namespace }}
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: secret_create
+  failed_when: false
+  changed_when: "'created' in secret_create.stdout"
+  no_log: true
+
+- name: Check if secret was created or already exists
+  debug:
+    msg: "{{ 'Docker Hub secret created' if secret_create.changed else 'Docker Hub secret already exists' }}"
+
+- name: Delete existing secret if it exists and recreate
+  block:
+    - name: Delete existing Docker Hub secret
+      command: oc delete secret dockerhub-secret -n {{ namespace }}
+      become: yes
+      become_user: "{{ actual_user }}"
+      when: "'AlreadyExists' in secret_create.stderr"
+      
+    - name: Recreate Docker Hub secret
+      command: >
+        oc create secret docker-registry dockerhub-secret
+        --docker-server={{ docker_registry }}
+        --docker-username={{ docker_username }}
+        --docker-password={{ docker_password }}
+        --docker-email={{ docker_username }}@example.com
+        -n {{ namespace }}
+      become: yes
+      become_user: "{{ actual_user }}"
+      when: "'AlreadyExists' in secret_create.stderr"
+      no_log: true
+  when: secret_create.rc != 0 and 'AlreadyExists' in secret_create.stderr
+
+- name: Verify namespace is ready
+  command: oc get namespace {{ namespace }} -o jsonpath='{.status.phase}'
+  become: yes
+  become_user: "{{ actual_user }}"
+  register: namespace_status
+  changed_when: false
+
+- name: Assert namespace is active
+  assert:
+    that:
+      - namespace_status.stdout == "Active"
+    fail_msg: "Namespace {{ namespace }} is not active"
+    success_msg: "Namespace {{ namespace }} is active and ready"
+
+- name: Set OpenShift facts
+  set_fact:
+    openshift_ready: true
+    current_namespace: "{{ namespace }}"
+    current_user: "{{ oc_user.stdout }}"
+
+- name: Display OpenShift setup summary
+  debug:
+    msg:
+      - "OpenShift setup completed successfully"
+      - "Cluster: {{ openshift_server }}"
+      - "User: {{ current_user }}"
+      - "Namespace: {{ current_namespace }}"
+      - "ServiceAccount: retail (with anyuid and privileged SCC)"
+      - "ClusterRole: retail"
+      - "ClusterRoleBinding: retail"
+      - "Docker Hub secret: dockerhub-secret"
+
+# Made with Bob
