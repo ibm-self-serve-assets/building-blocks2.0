@@ -1,0 +1,117 @@
+site_name: Bob+ IBM Technology Building Blocks Docs
+site_description: Bob+ IBM Technology Building Blocks Documentation
+site_url: https://ibm-self-serve-assets.github.io/building-blocks/
+
+docs_dir: docs-src
+
+theme:
+  name: material
+  custom_dir: docs-src/overrides
+
+  features:
+    - navigation.sections
+    - navigation.instant
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+    - search.share
+    - header.autohide
+
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/carbon.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+
+nav:
+  - Getting Started: index.md
+      
+  - AI:
+      - Overview: ai-core/index.md
+      - Agents:
+          - Overview: ai-core/agents/index.md
+          - Agent Builder: ai-core/agents/agent-builder.md
+          - Multi-Agent Orchestration: ai-core/agents/multi-agent-orchestration.md
+          - Agentic SDLC: ai-core/agents/agentic-sdlc.md
+
+      - AI Trust:
+          - Overview: ai-core/ai-trust/index.md
+          - Model Evaluation: ai-core/ai-trust/model-evaluation.md
+          - Agent Ops: ai-core/ai-trust/agent-ops.md
+          - Real-Time Guardrails: ai-core/ai-trust/real-time-guardrails.md
+          - AI Compliance: ai-core/ai-trust/ai-compliance.md
+
+  - Data:
+      - Overview: data-core/index.md
+      
+      - Integration:
+          - Overview: data-core/integration/index.md
+          - Data Pipeline (AI Generated): data-core/integration/data-pipeline-ai-generated/index.md
+          - Data Streaming: data-core/integration/data-streaming/index.md
+          - Data Observability: data-core/integration/data-observability/index.md
+
+      - Intelligence:
+          - Overview: data-core/intelligence/index.md
+          - Data Quality: data-core/intelligence/data-quality/index.md
+          - Data Lineage: data-core/intelligence/data-lineage/index.md
+          - Text2SQL: data-core/intelligence/text2sql/index.md
+
+      - Retrieval:
+          - Overview: data-core/retrieval/index.md
+          - RAG: data-core/retrieval/rag/index.md
+          - Vector Search:
+              - Overview: data-core/retrieval/vector-search/index.md
+              - Milvus: data-core/retrieval/vector-search/milvus.md
+              - OpenSearch: data-core/retrieval/vector-search/opensearch.md
+              - DataStax Astra DB: data-core/retrieval/vector-search/datastax-astra-db.md
+          - No SQL Database: data-core/retrieval/no-sql-database/index.md
+          - Zero Copy: data-core/retrieval/zero-copy/index.md
+
+  - Automation:
+      - Overview: automation-core/index.md
+        
+      - Build and Deploy:
+          - Overview: automation-core/build/index.md
+          - iPaaS: automation-core/build/ipaas.md
+          - Infrastructure as Code: automation-core/build/infrastructure-as-code.md
+          - Code Modernization: automation-core/build/middleware-modernization.md
+          - Asset Management: automation-core/build/asset-management.md
+
+      - Optimize:
+          - Overview: automation-core/optimize/index.md
+          - Automated Resilience & Compliance: automation-core/optimize/automated-resilience.md
+          - FinOps: automation-core/optimize/finops.md
+          - Automated Resource Management: automation-core/optimize/automated-resource-management.md
+          - Budget & Forecasting: automation-core/optimize/budget-and-forecasting.md
+          
+      - Secure:
+          - Overview: automation-core/secure/index.md
+          - Non-human Identity: automation-core/secure/non-human-identity.md
+          - Quantum-Safe: automation-core/secure/quantum-safe.md
+
+  - Bob+:
+      - Quick Start with Bob Modes: ibm-bob/index.md
+      - Quick Start with Bob Skills: ibm-bob/skills/index.md
+      - Build with Bob Workshops: workshop/index.md
+      - Build with Bob Webinars: build-with-bob/index.md
