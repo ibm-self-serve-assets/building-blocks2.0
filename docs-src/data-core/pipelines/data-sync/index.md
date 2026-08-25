@@ -5,9 +5,6 @@ Use **IBM Aspera Sync** to replicate and synchronize large files and data reposi
 !!! info "Product mapping"
     **IBM Aspera Sync** — high-speed WAN file and repository synchronization using IBM's FASP transport protocol
 
-!!! info "Existing Building Block"
-    There is currently **no standalone reusable Building Block** for Data Sync. For implementation, refer to [IBM Aspera Sync product documentation](https://www.ibm.com/products/aspera/sync) directly.
-
 ---
 
 ## Why It Matters

@@ -5,23 +5,21 @@ Use **Astra DB Serverless through IBM watsonx.data** for elastic vector storage 
 !!! info "Product mapping"
     **IBM watsonx.data + Astra DB Serverless** — add an Astra DB service from the watsonx.data infrastructure experience and provision a **Serverless (vector)** or **Serverless (tables)** database.
 
-!!! example "Existing Building Block"
-    A reusable **Astra DB Vector Search Building Block** is available as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Astra DB Vector Search Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/retrieval/vector-search/datastax-astra-db/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the capability, business context and architectural guidance.
+    [Building Blocks - Serverless Vector](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/retrieval/vector-search/datastax-astradb)
 
-!!! warning "Building Block vs current product provisioning"
-    The existing Astra DB Vector Search Building Block may reflect an earlier integration pattern. Current watsonx.data documentation supports provisioning Astra DB Serverless (vector) **directly from the watsonx.data infrastructure experience**. Clearly distinguish:
-
-    - **Existing Building Block** — a reusable accelerator for Astra DB vector search integration
-    - **Current product integration** — Astra DB Serverless provisioned and managed via [IBM watsonx.data](https://www.ibm.com/docs/en/watsonxdata/saas?topic=watsonxdata-adding-astra-db-service)
+!!! warning "Architecture note"
+    The Astra DB Vector Search Building Block may reflect an earlier integration pattern. Current watsonx.data documentation supports provisioning Astra DB Serverless (vector) **directly from the watsonx.data infrastructure experience** — see [IBM watsonx.data documentation](https://www.ibm.com/docs/en/watsonxdata/saas?topic=watsonxdata-adding-astra-db-service) for the current product integration.
 
 ---
 
 ## Why It Matters
 
 Vector search is the retrieval engine behind modern RAG, semantic search and agent memory. Traditional search systems match keywords — vector search matches meaning. Serverless vector databases make this capability available without requiring teams to provision, scale and operate a dedicated vector cluster.
+
+![Astra DB Serverless Vector overview](../../images/no-sql-database-astradb.png)
 
 ---
 

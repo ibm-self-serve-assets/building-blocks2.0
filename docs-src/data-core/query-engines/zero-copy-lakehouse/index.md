@@ -5,11 +5,10 @@ Use **IBM watsonx.data** with **Presto, Spark and Apache Iceberg** to query and 
 !!! info "Product mapping"
     **IBM watsonx.data** — Presto (interactive SQL) + Apache Spark (large-scale processing) + Apache Iceberg (open table format)
 
-!!! example "Existing Building Block"
-    A reusable **Zero Copy Building Block** is available as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Zero Copy Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/retrieval/zero-copy/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the capability, business context and architectural guidance.
+    [Building Blocks - Zero-Copy Lakehouse](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/retrieval/zero-copy)
 
 ---
 

@@ -5,17 +5,18 @@ Use **IBM watsonx.data intelligence** to convert natural-language requests into 
 !!! info "Product mapping"
     **IBM watsonx.data intelligence** — Text2SQL, natural-language query, vectorized metadata
 
-!!! example "Existing Building Block"
-    A reusable **Text2SQL Building Block** is available as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Text2SQL Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/intelligence/text2sql/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the capability, business context and design guidance.
+    [Building Blocks - Text2SQL](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/intelligence/text2sql)
 
 ---
 
 ## Why It Matters
 
 Most business users cannot write SQL. Analytical questions go unanswered or are queued to data teams, creating bottlenecks and delaying decisions. Text2SQL changes this by letting users ask questions in plain language, generating SQL behind the scenes and returning results through existing governed data infrastructure.
+
+![Text2SQL overview](../../images/text2sql.png)
 
 ---
 

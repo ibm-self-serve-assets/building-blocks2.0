@@ -5,11 +5,20 @@ Use **IBM watsonx.data intelligence** to add business and governance context to 
 !!! info "Product mapping"
     **IBM watsonx.data intelligence** — metadata enrichment, business glossary, profiling, classifications, relationships, quality and lineage
 
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
+
+    [Building Blocks - Metadata Enrichment & Data Quality](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/intelligence/data-quality)
+
 ---
 
 ## Why It Matters
 
 Raw schemas contain abbreviations, numeric codes and technical names that only the original developers understand. AI systems — especially Text2SQL and RAG — depend on rich, meaningful metadata to produce accurate results. **Metadata Enrichment & Data Quality** closes this gap by automating the process of profiling data, assigning business terms, generating descriptions, applying quality rules and identifying relationships at scale.
+
+![Data Quality overview](../../images/data-quality.png)
+
+![Data Lineage overview](../../images/data-lineage.png)
 
 ---
 

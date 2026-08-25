@@ -3,10 +3,7 @@
 **Context Hub** is a solution building block for combining **real-time events**, **enterprise data**, and **business metadata/governance** into a reusable context layer for applications, analytics and AI agents.
 
 !!! important "Not a standalone product"
-    Context Hub is an **architectural pattern**, not a single IBM product SKU. The primary products are **IBM Confluent**, **IBM watsonx.data**, and **IBM watsonx.data intelligence**.
-
-!!! info "Existing Building Block"
-    There is currently **no standalone reusable Building Block** for Context Hub. Context Hub is realised by combining the [Real-Time Streaming](../real-time-streaming/index.md), [Metadata Enrichment & Data Quality](../metadata-enrichment/index.md), and [Data Observability](../data-observability/index.md) building blocks together with IBM watsonx.data as the open lakehouse foundation. Refer to those individual pages for existing implementation assets.
+    Context Hub is an **architectural pattern**, not a single IBM product SKU. The primary products are **IBM Confluent**, **IBM watsonx.data**, and **IBM watsonx.data intelligence**. Implementation assets are available through the constituent building blocks: [Real-Time Streaming](../real-time-streaming/index.md), [Metadata Enrichment & Data Quality](../metadata-enrichment/index.md), and [Data Observability](../data-observability/index.md).
 
 ---
 

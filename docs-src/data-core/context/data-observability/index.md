@@ -6,17 +6,18 @@ Use **IBM watsonx.data integration Data Observability** and **IBM Data Observabi
     - **IBM watsonx.data integration** — Data Observability capability for monitoring integration processes and investigating incidents
     - **IBM Data Observability by Databand** — pipeline, run, task and dataset monitoring, anomaly detection and alerting; integrates with watsonx.data Spark monitoring
 
-!!! example "Existing Building Block"
-    A reusable **Data Observability Building Block** is available as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Data Observability Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/integration/data-observability/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the capability, business context and design guidance.
+    [Building Blocks - Data Observability](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/integration/data-observability)
 
 ---
 
 ## Why It Matters
 
 Data quality problems are discovered in one of two ways: proactively, through monitoring and alerting, or reactively, when a dashboard is wrong or an AI model produces bad outputs. Data Observability enables the proactive path — surfacing failures, anomalies, staleness and SLA breaches before downstream consumers are affected.
+
+![Data Observability overview](../../images/data-observability.png)
 
 ---
 

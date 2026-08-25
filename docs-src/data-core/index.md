@@ -15,7 +15,7 @@
 |---|---|---|---|
 | **Context** | [Context Hub](context/context-hub/index.md) | IBM Confluent + IBM watsonx.data + IBM watsonx.data intelligence | Combine real-time events, enterprise data, metadata, lineage and policy context for AI and analytics |
 | **Context** | [Real-Time Streaming](context/real-time-streaming/index.md) | IBM Confluent (Kafka + Flink + connectors + governance) | Stream, transform and govern continuously changing data |
-| **Context** | [Metadata Enrichment](context/metadata-enrichment/index.md) | IBM watsonx.data intelligence | Add business meaning, descriptions, terms, classifications, profiling and relationships to technical data |
+| **Context** | [Metadata Enrichment & Data Quality](context/metadata-enrichment/index.md) | IBM watsonx.data intelligence | Add business meaning, quality rules, descriptions, terms, classifications and relationships to technical data |
 | **Context** | [Data Observability](context/data-observability/index.md) | IBM watsonx.data integration + IBM Data Observability by Databand | Detect pipeline and dataset issues before downstream users and AI are impacted |
 | **Pipelines** | [RAG](pipelines/rag/index.md) | IBM watsonx.data OpenRAG + OpenSearch | Ground applications and agents with governed enterprise knowledge |
 | **Pipelines** | [UDI](pipelines/udi/index.md) | IBM watsonx.data integration + Docling for IBM watsonx | Ingest, parse, cleanse, chunk, enrich and prepare documents for RAG and AI |
@@ -114,10 +114,10 @@ flowchart LR
 | If your primary problem is… | Start with… |
 |---|---|
 | "My AI needs the latest business events" | [Real-Time Streaming](context/real-time-streaming/index.md) + [Context Hub](context/context-hub/index.md) |
-| "Users cannot understand or trust the available data" | [Metadata Enrichment](context/metadata-enrichment/index.md) |
+| "Users cannot understand or trust the available data" | [Metadata Enrichment & Data Quality](context/metadata-enrichment/index.md) |
 | "Pipelines fail and we discover it too late" | [Data Observability](context/data-observability/index.md) |
 | "I need reliable enterprise RAG / search" | [UDI](pipelines/udi/index.md) + [RAG](pipelines/rag/index.md) |
-| "Business users need to query governed data in plain English" | [Metadata Enrichment](context/metadata-enrichment/index.md) + [Text2SQL](pipelines/text2sql/index.md) |
+| "Business users need to query governed data in plain English" | [Metadata Enrichment & Data Quality](context/metadata-enrichment/index.md) + [Text2SQL](pipelines/text2sql/index.md) |
 | "I need repeatable batch transformation across systems" | [ETL / ELT](pipelines/etl/index.md) |
 | "I need to synchronize very large file repositories globally" | [Data Sync](pipelines/data-sync/index.md) |
 | "I want to query distributed data without creating another copy" | [Zero-Copy Lakehouse](query-engines/zero-copy-lakehouse/index.md) |

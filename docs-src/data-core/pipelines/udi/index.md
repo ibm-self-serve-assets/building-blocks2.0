@@ -6,11 +6,10 @@ Use **IBM watsonx.data integration Unstructured Data Integration** to ingest, cl
     - **IBM watsonx.data integration — Unstructured Data Integration (UDI)** — visual, drag-and-drop document pipeline
     - **Docling for IBM watsonx** — managed document intelligence and conversion for complex layouts
 
-!!! example "Existing Building Block"
-    A reusable **Data Pipeline Building Block** is available and contains UDI / unstructured data assets that serve as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Data Pipeline (AI-Generated) Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/integration/data-pipeline-ai-generated/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the UDI and unstructured-data portions of the Building Block for implementation guides, demo assets and reusable code. Do not create a duplicate UDI implementation — reuse what is already maintained there.
+    [Building Blocks - UDI](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/integration/data-pipeline-ai-generated)
 
 ---
 

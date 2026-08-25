@@ -5,19 +5,13 @@ Use **OpenRAG on IBM watsonx.data** to ground AI applications and agents in ente
 !!! info "Product mapping"
     **IBM watsonx.data OpenRAG + OpenSearch** — OpenSearch is automatically provisioned when OpenRAG is enabled in supported watsonx.data environments and serves as the required search backend.
 
-!!! example "Existing Building Block"
-    A reusable **RAG Building Block** is available as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the RAG Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/retrieval/rag/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the full capability, business context and architectural guidance.
+    [Building Blocks - RAG](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/retrieval/RAG)
 
-!!! warning "Architecture note — Building Block vs current product"
-    The existing RAG Building Block was developed as a reusable accelerator and may implement a custom RAG pipeline rather than **OpenRAG** specifically. When presenting to clients, clearly distinguish:
-
-    - **Existing Building Block** — a reusable, accelerator-style RAG implementation (custom pipeline, may use OpenSearch, LangChain or other components)
-    - **Current recommended architecture** — **IBM watsonx.data OpenRAG**, a managed enterprise RAG capability provisioned directly from watsonx.data
-
-    Do not represent the accelerator as OpenRAG if it does not implement OpenRAG. Refer to the [IBM OpenRAG provisioning documentation](https://www.ibm.com/docs/en/watsonxdata/saas?topic=openrag-provisioning) for the current product architecture.
+!!! warning "Architecture note"
+    The RAG Building Block is a reusable accelerator and may implement a custom RAG pipeline rather than **OpenRAG** specifically. The current recommended product architecture is **IBM watsonx.data OpenRAG** — a managed enterprise RAG capability provisioned directly from watsonx.data. Refer to the [IBM OpenRAG provisioning documentation](https://www.ibm.com/docs/en/watsonxdata/saas?topic=openrag-provisioning) for details.
 
 ---
 

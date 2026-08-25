@@ -5,17 +5,18 @@ Use **IBM Confluent** to stream, connect, process, govern and serve continuously
 !!! info "Product mapping"
     **IBM Confluent** — Kafka + Apache Flink + managed connectors + Stream Governance
 
-!!! example "Existing Building Block"
-    A reusable **Data Streaming Building Block** is available as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Data Streaming Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/integration/data-streaming/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the capability, business context and design guidance.
+    [Building Blocks - Real-Time Streaming](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/integration/data-streaming)
 
 ---
 
 ## Why It Matters
 
 Most enterprise data platforms are built for data at rest. Business events — orders, transactions, sensor readings, user actions — happen continuously, but batch pipelines delay that context by hours or days. Real-Time Streaming eliminates that gap, making live operational state available to applications, AI agents and analytics the moment it is generated.
+
+![IBM Confluent — Real-Time Streaming overview](../../images/data-streaming-confluent.png)
 
 ---
 

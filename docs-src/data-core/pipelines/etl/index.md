@@ -5,11 +5,10 @@ Use **IBM DataStage in IBM watsonx.data integration** to build batch data flows 
 !!! info "Product mapping"
     **IBM DataStage** is a capability of **IBM watsonx.data integration** and integrates directly with IBM watsonx.data. The sales-play shorthand may say *watsonx.data (DataStage)*.
 
-!!! example "Existing Building Block"
-    A reusable **Data Pipeline Building Block** is available and contains DataStage / structured-data ETL assets that serve as the implementation reference for this capability.
-    **[:octicons-link-external-16: Open the Data Pipeline (AI-Generated) Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/integration/data-pipeline-ai-generated/)**
+!!! info "GitHub Repository"
+    The complete source code and examples are available in the GitHub repository:
 
-    Use the DataStage and structured-data portions of the Building Block for implementation guides, demo assets and reusable code. Do not create a second DataStage Building Block — reuse the existing implementation under Data Pipeline.
+    [Building Blocks - ETL / ELT](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/data/integration/data-pipeline-ai-generated)
 
 ---
 
