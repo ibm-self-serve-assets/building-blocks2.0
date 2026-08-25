@@ -53,6 +53,7 @@ nav:
           - Overview: ai-core/agents/index.md
           - Agent Builder: ai-core/agents/agent-builder.md
           - Multi-Agent Orchestration: ai-core/agents/multi-agent-orchestration.md
+          - Agent Controls: ai-core/agents/agent-controls.md
           - Agentic SDLC: ai-core/agents/agentic-sdlc.md
 
       - AI Trust:
