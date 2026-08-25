@@ -2,15 +2,15 @@
 
 Production-ready enterprise AI requires more than models — it requires agents that take action, systems that can be trusted, and guardrails that keep everything within bounds. The **AI Core Building Blocks** provide the foundation to make that possible.
 
-This section brings together three pillars — **Agents**, **AI Trust**, and **Agentic SDLC** — covering everything from building and orchestrating AI agents to evaluating and governing them in production, with **IBM Bob** as the AI development partner that accelerates delivery across all of them.
+This section brings together three pillars — **Agents**, **AI Trust**, and **AI Engineering** — covering everything from building and orchestrating AI agents to governing them in production and accelerating the full software development lifecycle with IBM Bob.
 
 ## Overview
 
 The AI Core section is organized into three pillars that work together across the full AI lifecycle:
 
 - **Agents** — Build, orchestrate, and deploy intelligent AI agents using IBM watsonx Orchestrate. Covers the full journey from creating individual agents with the ADK to coordinating multi-agent systems across enterprise systems and frameworks.
-- **AI Trust** — Evaluate, monitor, govern, and protect AI in production using IBM watsonx.governance. Covers model evaluation, agent observability, real-time guardrails, and regulatory compliance.
-- **Agentic SDLC** — IBM Bob, an AI Agent purpose-built for the Software Development Lifecycle. Spans planning, coding, testing, documentation, modernization, and CI/CD — and serves as the development partner across every building block on this platform.
+- **AI Trust** — Enforce, evaluate, monitor, and govern AI in production. Covers agent controls, model evaluation, agent observability, real-time guardrails, and regulatory compliance — powered by IBM watsonx.governance and IBM watsonx Orchestrate.
+- **AI Engineering** — IBM Bob, an AI Agent purpose-built for the Software Development Lifecycle. Spans planning, coding, testing, documentation, modernization, and CI/CD — the development partner across every building block on this platform.
 
 Every building block in this section comes with purpose-built **Bob Skills and Custom Modes** — giving developers an AI-assisted workflow to build, configure, and deploy each capability faster, directly from their IDE.
 
@@ -24,24 +24,33 @@ Beyond AI Core, **IBM Bob** serves as the development partner across the entire 
 
 ### Agents
 
-Build, orchestrate, and deploy intelligent AI agents using IBM watsonx Orchestrate and IBM Bob.
+Build, orchestrate, and deploy intelligent AI agents using IBM watsonx Orchestrate.
 
 | Building Block | What It Does |
 |---------------|-------------|
 | **[Agent Builder](agents/agent-builder.md)** | Create and deploy LLM-backed, tool-calling agents using the ADK — Python SDK and CLI for the full agent lifecycle from local development to production |
 | **[Multi-Agent Orchestration](agents/multi-agent-orchestration.md)** | Coordinate wxO agents with each other and with external agents (LangChain, OpenAI, CrewAI) via A2A, Chat Completions, and AI Gateway |
-| **[Agentic SDLC](agents/agentic-sdlc.md)** | IBM Bob — an AI Agent purpose-built for the Software Development Lifecycle, spanning planning, coding, testing, documentation, modernization, and CI/CD |
 
 ### AI Trust
 
-Evaluate, monitor, govern, and protect AI in production using IBM watsonx.governance.
+Enforce, evaluate, monitor, and govern AI in production using IBM watsonx.governance and IBM watsonx Orchestrate.
 
 | Building Block | What It Does |
 |---------------|-------------|
+| **[Agent Controls](agents/agent-controls.md)** | Enforce safety, compliance, and reliability policies across agents, tools, and models — PII filtering, content guardrails, secrets detection, SQL injection prevention, rate limiting, and model fallback — as configuration, not code |
 | **[Model Evaluation](ai-trust/model-evaluation.md)** | Evaluate AI and ML models for performance quality, fairness, reliability, drift, and bias throughout the AI lifecycle |
 | **[Agent Ops](ai-trust/agent-ops.md)** | Evaluate, observe, and optimize AI agents — from benchmarking and red-teaming to cost, latency, and token observability |
 | **[Real-Time Guardrails](ai-trust/real-time-guardrails.md)** | Enforce safety boundaries at input and output — blocking harmful content, PII, jailbreaks, and hallucinations with configurable PASS/FLAG/BLOCK thresholds |
 | **[AI Compliance](ai-trust/ai-compliance.md)** | Map AI use cases to regulations (EU AI Act, NIST AI RMF), manage risk assessments, and report compliance posture across the enterprise |
+
+### AI Engineering
+
+Transform software development with IBM Bob — an AI Agent purpose-built for the entire Software Development Lifecycle.
+
+| Building Block | What It Does |
+|---------------|-------------|
+| **[Agentic SDLC](ai-engineering/agentic-sdlc.md)** | IBM Bob — an IDE-native AI Agent spanning planning, coding, testing, documentation, modernization, and CI/CD — the development partner across every building block on this platform |
+| **[Code Modernization](ai-engineering/code-modernization.md)** | Transform legacy Java, mainframe, IBM Z, and IBM i applications into modern cloud-native systems using AI-assisted analysis, structured transformation workflows, and automated validation *(coming soon)* |
 
 ---
 
