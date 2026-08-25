@@ -1,17 +1,5 @@
 # Non-human Identity & Secret Management
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Architecture](#architecture)
-- [Use Cases](#use-cases)
-- [Products & Services](#products--services)
-- [Download Skills](#download-skills)
-- [Download Custom Modes](#download-custom-modes)
-- [Assets](#assets)
-- [Call to Action](#call-to-action)
-
 ## Overview
 
 Non-human Identity delivers enterprise-grade secrets management and machine identity authentication that eliminates hardcoded credentials and centralises access control for automated systems, applications, and services.
