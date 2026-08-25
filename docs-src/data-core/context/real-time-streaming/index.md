@@ -2,80 +2,103 @@
 
 Use **IBM Confluent** to stream, connect, process, govern and serve continuously changing data for operational applications, analytics and AI.
 
-## Product mapping
+!!! info "Product mapping"
+    **IBM Confluent** — Kafka + Apache Flink + managed connectors + Stream Governance
 
-**IBM Confluent** — Kafka + Apache Flink + connectors + Stream Governance.
+!!! example "Existing Building Block"
+    A reusable **Data Streaming Building Block** is available as the implementation reference for this capability.
+    **[:octicons-link-external-16: Open the Data Streaming Building Block](https://ibm-self-serve-assets.github.io/building-blocks-docs/data-core/integration/data-streaming/)**
 
-## Business value
+    Use the Building Block for implementation guides, demo assets and reusable code. This page documents the capability, business context and design guidance.
 
-- **React to events as they happen** instead of waiting for batch pipelines.
-- **Reduce custom integration code** with managed Kafka connectors to databases, SaaS platforms, object stores, warehouses and other systems.
-- **Transform data in motion** with fully managed, serverless Apache Flink on Confluent Cloud.
-- **Improve trust in streaming data** with schemas, compatibility rules, cataloging and lineage.
-- **Create reusable real-time data products** that can feed applications, AI agents and lakehouse analytics.
+---
 
-## When to use
+## Why It Matters
+
+Most enterprise data platforms are built for data at rest. Business events — orders, transactions, sensor readings, user actions — happen continuously, but batch pipelines delay that context by hours or days. Real-Time Streaming eliminates that gap, making live operational state available to applications, AI agents and analytics the moment it is generated.
+
+---
+
+## Business Value
+
+!!! success "Key outcomes"
+    | Outcome | What It Means |
+    |---|---|
+    | **React to events as they happen** | Replace polling and batch delays with live event-driven flows |
+    | **Reduce custom integration code** | Managed Kafka connectors to databases, SaaS, object stores and warehouses eliminate bespoke glue code |
+    | **Transform data in motion** | Fully managed, serverless Apache Flink handles filtering, joining, enrichment and aggregation in real time |
+    | **Improve trust in streaming data** | Schemas, compatibility rules, cataloging and lineage make streaming data governable |
+    | **Create reusable real-time data products** | Streaming topics and materialized tables can feed applications, AI agents and lakehouse analytics from a single source |
+
+---
+
+## When to Use
 
 Use this building block for:
 
-- Change data capture and operational event streaming.
-- Real-time fraud, risk, monitoring or personalization.
-- Event-driven microservices and business process automation.
-- IoT and telemetry ingestion.
-- Streaming joins, enrichment, windows and aggregations.
-- Feeding real-time data into watsonx.data or AI applications.
+- Change data capture and operational event streaming
+- Real-time fraud detection, risk scoring, monitoring or personalization
+- Event-driven microservices and business process automation
+- IoT and telemetry ingestion at scale
+- Streaming joins, enrichment, windows and aggregations
+- Feeding real-time data into watsonx.data or AI applications
 
-A traditional batch ETL pipeline is usually a better fit when freshness requirements are measured in hours or days and the operational complexity of streaming is not justified.
+!!! note "When batch is better"
+    A traditional batch ETL pipeline is usually a better fit when freshness requirements are measured in hours or days and the operational complexity of streaming is not justified.
 
-## Core capabilities
+---
 
-### Apache Kafka foundation
+## Core Capabilities
 
-Kafka topics provide a durable, scalable event log for producers and consumers. IBM Confluent adds a managed platform, operational tooling and enterprise capabilities around Kafka.
+| Capability | Description |
+|---|---|
+| **Apache Kafka** | Durable, scalable event log with managed platform, operational tooling and enterprise capabilities |
+| **Apache Flink** | Fully managed, serverless stream-processing — filter, join, enrich and transform in real time |
+| **Managed Connectors** | Broad catalog of fully managed Kafka connectors to external systems — no connector infrastructure to operate |
+| **Stream Governance** | Schema Registry, data contracts, schema evolution, cataloging and lineage for data in motion |
 
-### Apache Flink stream processing
+---
 
-Confluent Cloud for Apache Flink is a fully managed, serverless stream-processing service. It can filter, join, enrich and transform Kafka streams in real time while Confluent handles provisioning, autoscaling and fault tolerance.
-
-### Connectors
-
-Confluent Cloud provides a broad catalog of fully managed Kafka connectors so teams can stream data between Kafka and external systems without operating connector infrastructure themselves.
-
-### Stream Governance
-
-Schema Registry and Stream Governance support data contracts, schema evolution, cataloging and lineage for data in motion. Stream Lineage helps answer where streaming data came from, where it goes and how it was transformed.
-
-## Reference architecture
+## Reference Architecture
 
 ```mermaid
 flowchart LR
-    S[Databases / SaaS / Apps / IoT] --> C[Managed Connectors]
-    C --> K[IBM Confluent / Kafka]
-    K --> F[Apache Flink]
-    F --> G[Schema Registry + Stream Governance]
-    F --> A[Applications / Agents]
-    F --> W[watsonx.data / Iceberg]
+    S["Databases / SaaS / Apps / IoT"] --> C["Managed Connectors"]
+    C --> K["IBM Confluent / Kafka"]
+    K --> F["Apache Flink<br/>filter · join · enrich"]
+    F --> G["Schema Registry +<br/>Stream Governance"]
+    F --> A["Applications / AI Agents"]
+    F --> W["watsonx.data / Iceberg"]
 ```
 
-## What to demonstrate
+---
 
-- Produce a live event to a Kafka topic.
-- Run a Flink SQL statement that filters, joins or enriches the stream.
-- Show the governed schema and stream lineage.
-- Use a connector to deliver the result to an external sink or watsonx.data.
+## What to Demonstrate
 
-## Design considerations
+1. Produce a live event to a Kafka topic.
+2. Run a Flink SQL statement that filters, joins or enriches the stream.
+3. Show the governed schema and stream lineage.
+4. Use a connector to deliver the result to an external sink or watsonx.data.
 
-- Define event schemas and compatibility rules before scaling producer teams.
-- Choose partitions based on throughput and ordering requirements.
-- Make event keys intentional because they affect partitioning, joins and state.
-- Design idempotent consumers where duplicate delivery would create business risk.
-- Use dead-letter/error handling patterns for malformed records.
-- Treat retention as an architectural decision, not just a storage setting.
+---
 
-## Official references
+## Design Considerations
 
-- [IBM Confluent](https://www.ibm.com/products/confluent)
-- [Confluent Cloud for Apache Flink](https://docs.confluent.io/cloud/current/flink/overview.html)
-- [Confluent Cloud connectors](https://docs.confluent.io/cloud/current/connectors/overview.html)
-- [Confluent Stream Governance](https://docs.confluent.io/cloud/current/stream-governance/index.html)
+!!! tip "Design for production from day one"
+    - Define event schemas and compatibility rules **before** scaling producer teams.
+    - Choose partitions based on throughput and ordering requirements.
+    - Make event keys intentional — they affect partitioning, joins and state.
+    - Design idempotent consumers where duplicate delivery creates business risk.
+    - Use dead-letter / error handling patterns for malformed records.
+    - Treat retention as an architectural decision, not just a storage setting.
+
+---
+
+## IBM Products Used
+
+| Product | Role |
+|---|---|
+| **[IBM Confluent](https://www.ibm.com/products/confluent)** | Managed Kafka platform, connectors, Flink and Stream Governance |
+| **[Confluent Cloud for Apache Flink](https://docs.confluent.io/cloud/current/flink/overview.html)** | Serverless stream processing — filter, join, enrich Kafka streams |
+| **[Confluent Cloud connectors](https://docs.confluent.io/cloud/current/connectors/overview.html)** | Fully managed connectors to external systems |
+| **[Confluent Stream Governance](https://docs.confluent.io/cloud/current/stream-governance/index.html)** | Schema Registry, data contracts, lineage and cataloging |
