@@ -26,8 +26,8 @@ Each Skill for IBM Building Blocks often aligns with an IBM product but not alwa
       <tr>
         <td><div class="skill-subgroup"><img src="images/agents.png" alt="" class="title-icon"><span>Agents</span></div></td>
         <td>
-            <a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills/agent">Agent Builder</a>
-            <br>Build and deploy multi-agent systems with tools (MCP servers) using watsonx Orchestrate's Agent Development Kit (ADK), CLI and REST API.
+            <a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills/agent">Agent Skills</a>
+            <br>Build and deploy enterprise-ready AI agents that automate business workflows, orchestrate complex tasks, and accelerate software development through intelligent automation.
         </td>
       </tr>
       <tr>
