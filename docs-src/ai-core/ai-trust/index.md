@@ -10,6 +10,7 @@ The AI Trust building blocks provide frameworks, production-ready code samples, 
 
 | Building Block | What It Does |
 |---------------|-------------|
+| **[Agent Controls](../agents/agent-controls.md)** | Enforce safety, compliance, and reliability policies across agents, tools, and models — PII filtering, content guardrails, secrets detection, SQL injection prevention, rate limiting, and model fallback — as configuration, not code |
 | **[Model Evaluation](model-evaluation.md)** | Evaluate your AI and ML models for performance quality, fairness, reliability, drift, and bias |
 | **[Agent Ops](agent-ops.md)** | Evaluate, observe, and optimize your AI agents throughout the lifecycle |
 | **[Real-Time Guardrails](real-time-guardrails.md)** | Enforce safety boundaries and operational constraints to keep AI applications within desired behavior in production |

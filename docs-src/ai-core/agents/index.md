@@ -14,8 +14,6 @@ The Agents building blocks provide ready-to-use accelerators that make it easier
 |---|---|
 | **[Agent Builder](agent-builder.md)** | Create and deploy autonomous AI agents that interact with enterprise applications, tools, and data using the watsonx Orchestrate Agentic Development Kit (ADK) |
 | **[Multi-Agent Orchestration](multi-agent-orchestration.md)** | Coordinate multiple AI agents to collaborate intelligently on complex enterprise workflows, with support for external system integration through workflows, MCP and A2A protocols |
-| **[Agent Controls](agent-controls.md)** | Enforce safety, compliance, and reliability policies across agents, tools, and models — PII filtering, content guardrails, secrets detection, SQL injection prevention, rate limiting, and model fallback — as configuration, not code |
-| **[Agentic SDLC](agentic-sdlc.md)** | Transform software development with IBM Bob, an IDE-native agentic AI that automates the entire software development lifecycle from intent to production-ready code |
 
 ## Getting Started
 
