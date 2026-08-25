@@ -194,10 +194,3 @@ flowchart LR
 ## Bob Skills
 
 A [Bob skill for Agent Controls](https://ibm-self-serve-assets.github.io/building-blocks-docs/ibm-bob/skills/) is available, giving Bob the expertise to design, configure, and deploy watsonx Orchestrate policy controls — artifact selection, hook assignment, priority layering, YAML import/export, and defence-in-depth stacking across agent and tool boundaries.
-
-## Bob Modes
-
-A [Bob mode for Agent Controls](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/agents/agent-controls/bob-modes) is available, providing an AI-assisted workflow for auditing agent risk surfaces and applying the right controls for your compliance and security requirements.
-
-!!! info "GitHub Repository"
-    [Agent Controls Assets](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/agents/agent-controls)
