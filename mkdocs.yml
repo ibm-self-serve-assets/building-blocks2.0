@@ -64,29 +64,26 @@ nav:
 
   - Data:
       - Overview: data-core/index.md
-      
-      - Integration:
-          - Overview: data-core/integration/index.md
-          - Data Pipeline (AI Generated): data-core/integration/data-pipeline-ai-generated/index.md
-          - Data Streaming: data-core/integration/data-streaming/index.md
-          - Data Observability: data-core/integration/data-observability/index.md
 
-      - Intelligence:
-          - Overview: data-core/intelligence/index.md
-          - Data Quality: data-core/intelligence/data-quality/index.md
-          - Data Lineage: data-core/intelligence/data-lineage/index.md
-          - Text2SQL: data-core/intelligence/text2sql/index.md
+      - Context:
+          - Overview: data-core/context/index.md
+          - Context Hub: data-core/context/context-hub/index.md
+          - Real-Time Streaming: data-core/context/real-time-streaming/index.md
+          - Metadata Enrichment: data-core/context/metadata-enrichment/index.md
+          - Data Observability: data-core/context/data-observability/index.md
 
-      - Retrieval:
-          - Overview: data-core/retrieval/index.md
-          - RAG: data-core/retrieval/rag/index.md
-          - Vector Search:
-              - Overview: data-core/retrieval/vector-search/index.md
-              - Milvus: data-core/retrieval/vector-search/milvus.md
-              - OpenSearch: data-core/retrieval/vector-search/opensearch.md
-              - DataStax Astra DB: data-core/retrieval/vector-search/datastax-astra-db.md
-          - No SQL Database: data-core/retrieval/no-sql-database/index.md
-          - Zero Copy: data-core/retrieval/zero-copy/index.md
+      - Pipelines:
+          - Overview: data-core/pipelines/index.md
+          - RAG: data-core/pipelines/rag/index.md
+          - UDI: data-core/pipelines/udi/index.md
+          - Text2SQL: data-core/pipelines/text2sql/index.md
+          - ETL: data-core/pipelines/etl/index.md
+          - Data Sync: data-core/pipelines/data-sync/index.md
+
+      - Query Engines:
+          - Overview: data-core/query-engines/index.md
+          - Zero-Copy Lakehouse: data-core/query-engines/zero-copy-lakehouse/index.md
+          - Serverless Vector: data-core/query-engines/serverless-vector/index.md
 
   - Automation:
       - Overview: automation-core/index.md
