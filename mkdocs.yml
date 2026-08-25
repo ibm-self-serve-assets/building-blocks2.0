@@ -87,25 +87,25 @@ nav:
 
   - Automation:
       - Overview: automation-core/index.md
-        
-      - Build and Deploy:
-          - Overview: automation-core/build/index.md
-          - iPaaS: automation-core/build/ipaas.md
-          - Infrastructure as Code: automation-core/build/infrastructure-as-code.md
-          - Code Modernization: automation-core/build/middleware-modernization.md
-          - Asset Management: automation-core/build/asset-management.md
+
+      - Operate:
+          - Overview: automation-core/operate/index.md
+          - Infrastructure as Code: automation-core/operate/infrastructure-as-code.md
+          - Configure & Automate: automation-core/operate/configure-automate.md
+          - Workload Orchestration & Scheduling: automation-core/operate/workload-orchestration.md
+
+      - Secure:
+          - Overview: automation-core/secure/index.md
+          - Non-human Identity & Secret Management: automation-core/secure/non-human-identity.md
+          - Application Risk & Continuous Compliance: automation-core/secure/application-risk.md
+          - Cryptographic & Quantum-Safe Readiness: automation-core/secure/cryptographic-readiness.md
 
       - Optimize:
           - Overview: automation-core/optimize/index.md
-          - Automated Resilience & Compliance: automation-core/optimize/automated-resilience.md
-          - FinOps: automation-core/optimize/finops.md
-          - Automated Resource Management: automation-core/optimize/automated-resource-management.md
-          - Budget & Forecasting: automation-core/optimize/budget-and-forecasting.md
-          
-      - Secure:
-          - Overview: automation-core/secure/index.md
-          - Non-human Identity: automation-core/secure/non-human-identity.md
-          - Quantum-Safe: automation-core/secure/quantum-safe.md
+          - Full-Stack Application Observability: automation-core/optimize/full-stack-observability.md
+          - Application Performance: automation-core/optimize/application-performance.md
+          - Technology Financial Management & FinOps: automation-core/optimize/technology-financial-management.md
+          - Network Performance Management: automation-core/optimize/network-performance.md
 
   - Bob+:
       - Quick Start with Bob Modes: ibm-bob/index.md

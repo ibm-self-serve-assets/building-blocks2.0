@@ -1,140 +1,139 @@
-# **Automation Core**
+# **Automation - Intelligent Hybrid Application**
 
-Welcome to the Automation Building Blocks documentation. This collection provides ready-to-use accelerators organized into three main categories: Build & Deploy, Optimize, and Secure.
+Welcome to the Automation Building Blocks documentation. This collection provides ready-to-use accelerators organized into three main categories: Operate, Secure, and Optimize.
 
-Automation Core provides a comprehensive framework for building, optimizing, and securing enterprise applications and infrastructure. By combining intelligent automation, operational excellence, and robust security capabilities, organizations can accelerate delivery, reduce operational overhead, and maintain resilience across hybrid cloud environments.
+Automation for Intelligent Hybrid Applications provides a comprehensive framework for operating, securing, and optimizing enterprise applications and infrastructure. By combining infrastructure automation, robust security capabilities, and intelligent optimization, organizations can accelerate delivery, reduce operational overhead, and maintain resilience across hybrid cloud environments.
 
 ![Automation Core](images/automation.png)
 
 ---
-## **Build and Deploy**
+## **Operate**
 
-Accelerate application delivery with standardized integration, infrastructure provisioning, and AI-assisted code modernization. Transform legacy systems into cloud-native architectures while maintaining consistency and security across all environments.
+Automate infrastructure provisioning, configuration management, and workload scheduling to deliver consistent, repeatable pipelines across hybrid cloud environments—reducing manual toil and enabling teams to focus on higher-value work.
 
-### **[Infrastructure as Code](build/infrastructure-as-code.md)**
-Automate infrastructure provisioning and management with declarative configuration and version-controlled templates.
+### **[Infrastructure as Code](operate/infrastructure-as-code.md)**
+Automate infrastructure provisioning and management with declarative, version-controlled Terraform configurations.
 
-- **Infrastructure Provisioning**: Automated deployment of compute, storage, and networking resources
-- **Hybrid / Multi-cloud Ready**: Consistent provisioning across AWS, Azure, GCP, and on-premises environments
-- **Bob-Generated IaC**: Natural language prompts transformed into Terraform and Ansible configurations
-- **Configuration Management**: Drift detection and automated remediation
-- **Environment Standardization**: Repeatable, consistent infrastructure across dev, test, and production
+- **Declarative Provisioning**: Define infrastructure state in code for predictable, repeatable deployments
+- **Hybrid / Multi-cloud Ready**: Consistent provisioning across AWS, Azure, GCP, and on-premises
+- **State Management**: Drift detection and automated reconciliation
+- **Policy as Code**: Enforce governance standards automatically
 
-### **[iPaaS Integration](build/ipaas.md)**
-Connect applications, data, and business processes across hybrid cloud environments with IBM webMethods.
+### **[Configure & Automate](operate/configure-automate.md)**
+Enforce consistent configuration and automate IT operations at scale using Red Hat Ansible Automation Platform.
 
-- **API-led Integration**: Expose and consume APIs across distributed systems
-- **Event-driven Workflows**: Real-time data synchronization and event processing
-- **Business Process Automation**: Orchestrate complex workflows spanning multiple systems
-- **Hybrid Integration**: Seamlessly connect cloud and on-premises applications
-- **Bob-Designed Integration Flows**: AI-assisted integration pattern generation and workflow design
+- **Agentless Architecture**: Automate over SSH/WinRM without deploying agents
+- **Idempotent Playbooks**: Run safely multiple times; only required changes applied
+- **Enterprise Governance**: Automation Controller with RBAC, audit logging, and scheduling
+- **CI/CD Integration**: Native integration with Jenkins, GitLab CI, and Tekton
 
-### **[Code Modernization](build/middleware-modernization.md)**
-Transform legacy applications and middleware to modern, cloud-native architectures with AI-powered tools.
+### **[Workload Orchestration & Scheduling](operate/workload-orchestration.md)**
+Schedule and manage diverse workloads—containers, VMs, batch jobs, and binaries—under a single control plane with HashiCorp Nomad.
 
-- **Legacy to Microservices Transformation**: Decompose monolithic applications into scalable microservices
-- **Automated Code Refactoring**: Modernize COBOL, mainframe, and legacy Java applications
-- **Dependency and Library Modernization**: Update frameworks, libraries, and runtime environments
-- **Containerization**: Package applications for Kubernetes and OpenShift deployment
-- **Technical Debt Elimination**: Systematic removal of outdated patterns and practices
+- **Multi-Runtime Scheduling**: Docker, Exec, Java, Podman, and QEMU drivers in one scheduler
+- **Batch & Periodic Jobs**: First-class support for scheduled and parameterized batch workloads
+- **Blue/Green & Canary Deployments**: Built-in advanced deployment strategies
+- **Vault Integration**: Native HashiCorp Vault integration for runtime secrets injection
 
-[**Explore Build and Deploy →**](build/index.md)
-
----
-
-## **Optimize**
-
-Continuously improve cost efficiency, operational stability, and resource utilization through intelligent automation. Gain financial visibility, automate resilience, and optimize resource allocation to ensure applications remain performant and economically sustainable.
-
-### **[Automated Resilience](optimize/automated-resilience.md)**
-Proactively identify and remediate vulnerabilities, compliance gaps, and operational risks with IBM Concert.
-
-- **Vulnerability Detection & Correlation**: Continuous CVE monitoring and impact analysis
-- **Risk-Based Prioritization**: Intelligent ranking of security and operational risks
-- **Continuous Compliance & Posture Management**: Automated compliance monitoring and drift detection
-- **Certificate Lifecycle Management**: Automated certificate renewal and expiration tracking
-- **Dependency Risk Mapping**: Identify and assess supply chain vulnerabilities
-- **Systemic Resilience Analysis**: Detect weaknesses before they impact business-critical workloads
-
-### **[Automated Resource Management](optimize/automated-resource-management.md)**
-Optimize application performance and infrastructure costs with intelligent, real-time resource allocation using IBM Turbonomic.
-
-- **Cost-Efficient Operations**: Balance performance requirements with infrastructure spend
-- **Real-time Scaling Decisions**: Automated resource allocation based on workload demand
-- **Performance Assurance**: Prevent bottlenecks and ensure SLA compliance
-- **Workload Placement Optimization**: Intelligent scheduling across hybrid cloud infrastructure
-- **Container Density Optimization**: Maximize resource utilization in Kubernetes environments
-- **Automated Performance Remediation**: Self-healing infrastructure adjustments
-
-### **[FinOps](optimize/finops.md)**
-Gain financial transparency and cost intelligence for cloud investments with IBM Apptio.
-
-- **Cloud & Infrastructure Cost Visibility**: Granular tracking of spending across all cloud providers
-- **Cost Allocation & Chargeback**: Accurate attribution of costs to teams, projects, and business units
-- **Forecasting & Budgeting**: Predictive analytics for capacity planning and budget management
-- **Cost-Aware Automation Insights**: Recommendations for optimization opportunities
-- **Unit Economics Analysis**: Understand cost per transaction, user, or business outcome
-- **Spend Anomaly Detection**: Identify and alert on unexpected cost increases
-
-[**Explore Optimize →**](optimize/index.md)
+[**Explore Operate →**](operate/index.md)
 
 ---
 
 ## **Secure**
 
-Protect enterprise applications, data, and infrastructure through comprehensive identity management, secrets management, and quantum-safe cryptographic capabilities. Implement robust authentication and prepare for post-quantum security threats while maintaining compliance.
+Protect enterprise applications, data, and infrastructure through comprehensive identity management, continuous compliance monitoring, and quantum-safe cryptographic capabilities.
 
-### **[Non-human Identity](secure/non-human-identity.md)**
-Centralize identity, access control, secrets management, and security enforcement across hybrid environments with IBM Verify and HashiCorp Vault.
+### **[Non-human Identity & Secret Management](secure/non-human-identity.md)**
+Centralize identity, access control, and secrets management across hybrid environments with IBM Verify and HashiCorp Vault.
 
 **IBM Verify - Identity & Access Management:**
 - **Identity & Access Management**: Unified identity governance for users and service accounts
 - **SSO, MFA, Adaptive Access**: Single sign-on with multi-factor authentication and risk-based policies
-- **Policy Enforcement & Governance**: Centralized access control and compliance enforcement
-- **Privileged Access Management**: Secure access to critical systems and sensitive data
-- **Application Workload Security**: Identity-based security for microservices and APIs
 - **Zero Trust Architecture**: Continuous verification and least-privilege access
 
 **HashiCorp Vault - Secrets Management:**
-- **Secure Storage of Secrets**: Encrypted storage for API keys, passwords, and certificates
 - **Dynamic Credentials**: On-demand generation of short-lived credentials
-- **Encryption as a Service**: Centralized encryption and decryption operations
 - **Automated Secret Rotation**: Scheduled rotation of credentials without downtime
-- **Audit Logging**: Complete visibility into secret access and usage
 - **Integration with CI/CD**: Secure secret injection into deployment pipelines
 
-### **[Quantum Safe Cryptography](secure/quantum-safe.md)**
-Prepare for post-quantum security threats with IBM Guardium Quantum Safe.
+### **[Application Risk & Continuous Compliance](secure/application-risk.md)**
+Gain unified visibility into application risk, vulnerabilities, and compliance posture with IBM Concert.
 
-- **Quantum Risk Assessment**: Evaluate cryptographic vulnerabilities to quantum computing attacks
-- **Cryptographic Inventory Discovery**: Automated discovery of cryptographic assets across the enterprise
-- **Migration Roadmap Planning**: Strategic planning for quantum-safe algorithm adoption
-- **Crypto Agility Recommendations**: Guidance on implementing flexible cryptographic frameworks
-- **Post-Quantum Algorithm Implementation**: Deploy NIST-approved quantum-resistant algorithms
-- **Compliance & Regulatory Readiness**: Ensure adherence to emerging quantum-safe standards
+- **Continuous CVE Monitoring**: Real-time vulnerability detection and risk-based prioritization
+- **Compliance Posture Management**: Automated drift detection against SOC 2, HIPAA, PCI-DSS
+- **Certificate Lifecycle Management**: Prevent outages through proactive certificate renewal
+- **Dependency Risk Mapping**: Identify and assess supply chain vulnerabilities
+
+### **[Cryptographic & Quantum-Safe Readiness](secure/cryptographic-readiness.md)**
+Discover, govern, and modernize cryptographic posture with IBM Guardium Cryptography Manager.
+
+- **Cryptographic Discovery**: Automated discovery of all cryptographic assets across the enterprise
+- **CBOM Generation**: Produce a Cryptography Bill of Materials with every build
+- **Post-Quantum Migration**: Plan and execute migration to NIST-approved quantum-safe algorithms
+- **CI/CD Integration**: Continuous scanning with AI-assisted remediation via IBM Bob
 
 [**Explore Secure →**](secure/index.md)
 
 ---
 
-## **Why Automation Core?**
+## **Optimize**
 
-Modern enterprises face increasing complexity in managing hybrid cloud environments, legacy system modernization, and evolving security threats. Automation Core addresses these challenges by:
+Continuously improve observability, application performance, cost efficiency, and network health through intelligent automation and analytics.
 
-- **Accelerating Delivery**: Reduce manual processes and standardize deployment pipelines with IaC and iPaaS
-- **Optimizing Operations**: Balance cost, performance, and resilience through intelligent automation and FinOps
-- **Enhancing Security**: Implement robust identity management, secrets management, and quantum-safe cryptography
-- **Enabling Transformation**: Modernize legacy applications while maintaining business continuity
-- **Ensuring Resilience**: Proactively detect and remediate vulnerabilities and compliance gaps
-- **Maximizing ROI**: Optimize cloud spending and resource utilization across hybrid environments
+### **[Full-Stack Application Observability](optimize/full-stack-observability.md)**
+Gain automated, real-time visibility across every tier of hybrid applications with IBM Instana.
+
+- **Zero-Config Instrumentation**: Automatic discovery of 300+ technologies without code changes
+- **100% Trace Capture**: Full-fidelity distributed tracing with no sampling
+- **AI Root Cause Analysis**: Correlated incident detection reduces MTTR from hours to minutes
+- **Dynamic Topology Mapping**: Real-time service dependency maps that update automatically
+
+### **[Application Performance](optimize/application-performance.md)**
+Optimize resource allocation and application performance with IBM Turbonomic.
+
+- **Real-time Demand-Driven Optimization**: Continuously balance performance and cost
+- **Intelligent Workload Placement**: Optimize placement across hybrid and multi-cloud environments
+- **Container Density Optimization**: Maximize Kubernetes utilization without performance impact
+- **Closed-Loop Automation**: Automated decisions and actions without manual intervention
+
+### **[Technology Financial Management & FinOps](optimize/technology-financial-management.md)**
+Gain financial transparency and cost intelligence for cloud investments with IBM Cloudability / Apptio.
+
+- **Cloud & Infrastructure Cost Visibility**: Granular tracking of spending across all cloud providers
+- **Cost Allocation & Chargeback**: Accurate attribution of costs to teams, projects, and business units
+- **Forecasting & Budgeting**: Predictive analytics for capacity planning and budget management
+- **Spend Anomaly Detection**: Identify and alert on unexpected cost increases
+
+### **[Network Performance Management](optimize/network-performance.md)**
+Monitor and optimize network health across hybrid infrastructure with IBM SevOne Network Performance Management.
+
+- **Comprehensive Device Coverage**: Monitor routers, switches, firewalls, and load balancers
+- **High-Frequency Polling**: Sub-minute data collection for rapid anomaly detection
+- **Capacity Planning**: Trend analysis and forecasting to prevent capacity-related outages
+- **AI-Powered Anomaly Detection**: Dynamic baselines reduce alert fatigue
+
+[**Explore Optimize →**](optimize/index.md)
+
+---
+
+## **Why Automation for Intelligent Hybrid Applications?**
+
+Modern enterprises face increasing complexity in managing hybrid cloud environments, diverse workload types, evolving security threats, and growing operational costs. This automation framework addresses these challenges by:
+
+- **Accelerating Delivery**: Reduce manual processes and standardize pipelines with IaC, Ansible, and Nomad
+- **Enhancing Security**: Implement robust identity management, continuous compliance, and quantum-safe cryptography
+- **Improving Observability**: Gain full-stack visibility and AI-powered insights with IBM Instana
+- **Optimizing Performance**: Balance cost and performance through intelligent automation with IBM Turbonomic
+- **Managing Costs**: Align technology spend with business value through TFM and FinOps
+- **Ensuring Network Health**: Proactively manage network capacity and performance with IBM SevOne
 
 ---
 
 ## **Getting Started**
 
-1. **[Build and Deploy](build/index.md)** - Start with infrastructure automation, integration, and application modernization
-2. **[Optimize](optimize/index.md)** - Implement continuous optimization for cost, performance, and resilience
-3. **[Secure](secure/index.md)** - Strengthen security posture with identity management, secrets management, and quantum-safe cryptography
+1. **[Operate](operate/index.md)** - Start with infrastructure automation, configuration management, and workload scheduling
+2. **[Secure](secure/index.md)** - Implement identity management, continuous compliance, and cryptographic readiness
+3. **[Optimize](optimize/index.md)** - Deploy observability, performance optimization, financial management, and network monitoring
 
 ---
 
@@ -143,4 +142,4 @@ Code for these building blocks can be found in the [Automation Building Blocks r
 
 ---
 
-Together, these building blocks create an integrated automation platform that enhances delivery speed, operational efficiency, and security posture across the entire application lifecycle—from infrastructure provisioning to quantum-safe cryptography.
+Together, these building blocks create an integrated automation platform that enhances delivery speed, operational security, and efficiency across the entire application lifecycle—from infrastructure provisioning to quantum-safe cryptography.

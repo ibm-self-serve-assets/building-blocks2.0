@@ -1,4 +1,4 @@
-# Non-human Identity
+# Non-human Identity & Secret Management
 
 ## Table of Contents
 
@@ -273,11 +273,9 @@ sequenceDiagram
 - 🚀 [Get Started](https://www.ibm.com/products/verify-identity)
 - 💻 [GitHub Repository](https://github.com/ibm-security-verify)
 
-## Assets
-
 ## Download Skills
 
-Download pre-built Bob skills to accelerate your Non-human Identity implementation:
+Download pre-built Bob skills to accelerate your Non-human Identity & Secret Management implementation:
 
 | Skill Name | Description | Download Link |
 |------------|-------------|---------------|
@@ -313,14 +311,13 @@ Extend Bob's functionality with custom modes tailored for Non-human Identity wor
 
 **Within Secure:**
 
-- [Quantum-Safe Cryptography](quantum-safe.md) - Cryptographic key management
+- [Cryptographic & Quantum-Safe Readiness](cryptographic-readiness.md) - Cryptographic key management
 
 **Other Building Blocks:**
 
-- [Platform as a Service (iPaaS)](../build/ipaas.md) - Secure application integration
-- [Infrastructure as Code](../build/infrastructure-as-code.md) - Automated infrastructure with identity controls
-- [Code Modernization](../build/middleware-modernization.md) - Modernize authentication middleware
-- [Automated Resilience & Compliance](../optimize/automated-resilience.md) - Continuous security posture monitoring
+- [Infrastructure as Code](../operate/infrastructure-as-code.md) - Automated infrastructure with identity controls
+- [Configure & Automate](../operate/configure-automate.md) - Inject secrets securely into automation workflows
+- [Application Risk & Continuous Compliance](application-risk.md) - Continuous security posture monitoring
 
 ## Call to Action
 
