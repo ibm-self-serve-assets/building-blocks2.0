@@ -42,6 +42,9 @@ graph LR
 5. **Red-Team** — Test against 15 adversarial attack types
 6. **Observe** — Track cost, latency, and token usage via Langfuse
 
+!!! tip "From evaluation to governance evidence"
+    Evaluation metrics from watsonx Orchestrate agents can be automatically captured as governance evidence and tracked against policy thresholds — see [Enforcement Tracking](ai-compliance.md#enforcement-tracking-for-watsonx-orchestrate) under AI Compliance.
+
 ## Metrics Reference
 
 ### Agent Metrics

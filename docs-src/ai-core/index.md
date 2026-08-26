@@ -2,14 +2,14 @@
 
 Production-ready enterprise AI requires more than models — it requires agents that take action, systems that can be trusted, and guardrails that keep everything within bounds. The **AI Core Building Blocks** provide the foundation to make that possible.
 
-This section brings together three pillars — **Agents**, **AI Trust**, and **AI Engineering** — covering everything from building and orchestrating AI agents to governing them in production and accelerating the full software development lifecycle with IBM Bob.
+This section brings together three pillars — **Agents**, the **AI Control Plane**, and **AI Engineering** — covering everything from building and orchestrating AI agents to governing them in production and accelerating the full software development lifecycle with IBM Bob.
 
 ## Overview
 
 The AI Core section is organized into three pillars that work together across the full AI lifecycle:
 
 - **Agents** — Build, orchestrate, and deploy intelligent AI agents using IBM watsonx Orchestrate. Covers the full journey from creating individual agents with the ADK to coordinating multi-agent systems across enterprise systems and frameworks.
-- **AI Trust** — Enforce, evaluate, monitor, and govern AI in production. Covers agent controls, model evaluation, agent observability, real-time guardrails, and regulatory compliance — powered by IBM watsonx.governance and IBM watsonx Orchestrate.
+- **AI Control Plane** — Enforce, evaluate, monitor, and govern AI in production. Covers agent controls, model evaluation, agent observability, real-time guardrails, and regulatory compliance — powered by IBM watsonx.governance and IBM watsonx Orchestrate.
 - **AI Engineering** — IBM Bob, an AI Agent purpose-built for the Software Development Lifecycle. Spans planning, coding, testing, documentation, modernization, and CI/CD — the development partner across every building block on this platform.
 
 Every building block in this section comes with purpose-built **Bob Skills and Custom Modes** — giving developers an AI-assisted workflow to build, configure, and deploy each capability faster, directly from their IDE.
@@ -31,7 +31,7 @@ Build, orchestrate, and deploy intelligent AI agents using IBM watsonx Orchestra
 | **[Agent Builder](agents/agent-builder.md)** | Create and deploy LLM-backed, tool-calling agents using the ADK — Python SDK and CLI for the full agent lifecycle from local development to production |
 | **[Multi-Agent Orchestration](agents/multi-agent-orchestration.md)** | Coordinate wxO agents with each other and with external agents (LangChain, OpenAI, CrewAI) via A2A, Chat Completions, and AI Gateway |
 
-### AI Trust
+### AI Control Plane
 
 Enforce, evaluate, monitor, and govern AI in production using IBM watsonx.governance and IBM watsonx Orchestrate.
 

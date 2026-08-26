@@ -25,8 +25,8 @@ Whether building new cloud-native applications, modernizing legacy workloads, mi
 - **Agents**
 Reusable, enterprise-ready AI building blocks that accelerate agent adoption by enabling the design, orchestration, and deployment of intelligent agents across business workflows.
 
-- **AI Trust**
-AI Trust building blocks provide tools to evaluate AI models, test and monitor AI agents, enforce real-time safety guardrails, and manage regulatory compliance. They include model evaluation, agent ops, real-time guardrails, and AI compliance.
+- **AI Control Plane**
+AI Control Plane building blocks provide tools to evaluate AI models, test and monitor AI agents, enforce real-time safety guardrails, and manage regulatory compliance. They include model evaluation, agent ops, real-time guardrails, and AI compliance.
 
 **Data Core Capabilities**
 
