@@ -16,6 +16,9 @@ Together, they cover the full engineering surface — building what's next while
 |---------------|-------------|
 | **[Agentic SDLC](agentic-sdlc.md)** | Transform software development with IBM Bob, an IDE-native agentic AI that automates the entire software development lifecycle from intent to production-ready code |
 | **[Code Modernization](code-modernization.md)** | Transform legacy Java, mainframe, IBM Z, and IBM i applications into modern cloud-native systems using AI-assisted analysis, structured transformation workflows, and automated validation — *(coming soon)* |
+| **[Headless Bob](headless-bob.md)** | Run IBM Bob autonomously in CI/CD pipelines, scheduled jobs, and event-driven automations — agentic engineering workflows without a developer in the loop — *(coming soon)* |
+| **[Integration as Code](integration-as-code.md)** | Generate production-ready API connectors, event stream integrations, and data pipelines from natural language descriptions using IBM Bob — *(coming soon)* |
+| **[Context Engineering](context-engineering.md)** | Design, manage, and optimise the context that agents and LLMs receive — prompt architecture, RAG context patterns, context window management, and multi-agent context passing — *(coming soon)* |
 
 ## Getting Started
 
