@@ -66,6 +66,9 @@ nav:
           - Overview: ai-core/ai-engineering/index.md
           - Agentic SDLC: ai-core/ai-engineering/agentic-sdlc.md
           - Code Modernization: ai-core/ai-engineering/code-modernization.md
+          - Headless Bob: ai-core/ai-engineering/headless-bob.md
+          - Integration as Code: ai-core/ai-engineering/integration-as-code.md
+          - Context Engineering: ai-core/ai-engineering/context-engineering.md
 
   - Data:
       - Overview: data-core/index.md
