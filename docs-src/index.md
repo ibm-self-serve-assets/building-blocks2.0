@@ -14,8 +14,8 @@ Whether building new cloud-native applications, modernizing legacy workloads, mi
 
 <img src="image-1.png"
      alt="Digital Experience with IBM Bob+"
-     width="1218"
-     height="653"
+     width="750"
+     height="400"
      style="max-width:100%; height:auto;">
 
 ## Capability Areas
