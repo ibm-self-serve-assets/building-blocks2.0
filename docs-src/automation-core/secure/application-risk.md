@@ -182,20 +182,6 @@ sequenceDiagram
 
 ---
 
-## Download Skills
-
-| Skill Name | Description | Download Link | Version |
-|------------|-------------|---------------|---------|
-| **Concert Resilience Automation** | Natural language interface for IBM Concert resilience and compliance operations | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-skills/automated-resilience-concert.zip) | v1.0.0 |
-
-## Download Custom Modes
-
-| Mode Name | Description | Download Link | Version |
-|-----------|-------------|---------------|---------|
-| **Application Resilience Mode** | Specialized mode for application resilience and compliance tasks with Concert integration | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip) | v1.0.0 |
-
----
-
 ## Assets
 
 ### Demo Videos
@@ -215,12 +201,10 @@ sequenceDiagram
 ### Ready to Build with Application Risk & Continuous Compliance?
 
 - **Explore the fundamentals** in the [Overview](#overview), [Architecture](#architecture), and [Key Features](#key-features) sections
-- **Download reusable assets** from [Download Skills](#download-skills) and [Download Custom Modes](#download-custom-modes)
 - **Watch the demo video** to see IBM Concert in action
 
 **Quick Links:**
 - 🚀 [Get Started with IBM Concert](https://www.ibm.com/products/concert)
-- 📥 [Download Concert Skill](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-skills/automated-resilience-concert.zip)
 - 📖 [Implementation Guide](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/automated-resilience-and-compliance/README.md)
 
 ---

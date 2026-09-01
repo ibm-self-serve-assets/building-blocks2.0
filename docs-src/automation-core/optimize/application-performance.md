@@ -217,20 +217,6 @@ sequenceDiagram
 
 ---
 
-## Download Skills
-
-| Skill Name | Description | Download Link | Version |
-|------------|-------------|---------------|---------|
-| **Turbonomic Resource Optimization** | Natural language interface for IBM Turbonomic resource optimization and analysis | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resource-mgmt/bob-skills/automated-resource-mgmt-turbonomic.zip) | v1.0.0 |
-
-## Download Custom Modes
-
-| Mode Name | Description | Download Link | Version |
-|-----------|-------------|---------------|---------|
-| **Automated Resource Management Mode** | Specialized mode for resource optimization tasks with Turbonomic integration | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resource-mgmt/bob-modes/base-modes/automated-resource-mgmt.zip) | v1.0.0 |
-
----
-
 ## Assets
 
 ### Demo Videos
@@ -250,12 +236,10 @@ sequenceDiagram
 ### Ready to Build with Application Performance?
 
 - **Explore the fundamentals** in the [Overview](#overview), [Architecture](#architecture) sections
-- **Download reusable assets** from [Download Skills](#download-skills) and [Download Custom Modes](#download-custom-modes)
 - **Watch the demo video** to see IBM Turbonomic in action
 
 **Quick Links:**
 - 🚀 [Get Started with IBM Turbonomic](https://www.ibm.com/products/turbonomic)
-- 📥 [Download Turbonomic Skill](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resource-mgmt/bob-skills/automated-resource-mgmt-turbonomic.zip)
 - 📖 [Implementation Guide](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/automated-resource-mgmt/README.md)
 
 ---

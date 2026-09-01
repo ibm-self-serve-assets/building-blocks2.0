@@ -272,21 +272,6 @@ Terraform maintains a state file that tracks the current state of managed infras
 
 ---
 
-## Download Skills
-
-Download pre-built skills to extend your Infrastructure as Code capabilities with Bob AI Assistant:
-
-| Skill Name | Description | Download Link | Version |
-|------------|-------------|---------------|---------|
-| **Infrastructure as Code - Terraform** | Terraform automation skill for infrastructure provisioning, state management, and resource lifecycle | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/operate/infrastructure-as-code/bob-skills/infrastructure-as-code-terraform/infrastructure-as-code-terraform.zip) | v1.0.0 |
-
-### Skills Resources
-
-- 📦 [Building Blocks Skills Repository](https://github.com/ibm-self-serve-assets/building-blocks)
-- 📖 [Skills Development Guide](../../ibm-bob/skills/contributing_to_skills.md)
-
----
-
 ## Assets
 
 ### Demo Videos
@@ -307,11 +292,9 @@ Download pre-built skills to extend your Infrastructure as Code capabilities wit
 ### Ready to Build with Infrastructure as Code?
 
 - **Explore the fundamentals** in the [Overview](#overview), [Architecture](#architecture), and [Core Concepts](#core-concepts) sections
-- **Download reusable assets** from [Download Skills](#download-skills)
 - **Watch the demo video** to see IaC in action
 
 **Get Started Now:**
-- 📥 [Download Terraform Skill](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/operate/infrastructure-as-code/bob-skills/infrastructure-as-code-terraform/infrastructure-as-code-terraform.zip)
 - 📖 [Implementation Guide](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/operate/infrastructure-as-code/README.md)
 
 ---

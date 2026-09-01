@@ -261,30 +261,6 @@ sequenceDiagram
 - 🚀 [Get Started](https://www.ibm.com/products/verify-identity)
 - 💻 [GitHub Repository](https://github.com/ibm-security-verify)
 
-## Download Skills
-
-Download pre-built Bob skills to accelerate your Non-human Identity & Secret Management implementation:
-
-| Skill Name | Description | Download Link |
-|------------|-------------|---------------|
-| **Vault Secret Migrator** | Automates the discovery and migration of existing secrets into HashiCorp Vault KV stores, updating application configurations to read from Vault at runtime | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/secure/non-human-identity/secrets-management/bob-skills/vault-secret-migrator.zip) |
-
-### Skills Resources
-
-- 📦 [All Skills Repository](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/secure/non-human-identity/secrets-management/bob-skills)
-
-## Download Custom Modes
-
-Extend Bob's functionality with custom modes tailored for Non-human Identity workflows:
-
-| Mode Name | Description | Download Link |
-|-----------|-------------|---------------|
-| **Vault Secret Migrator** | A purpose-built Bob mode that guides users through Vault setup, secrets engine configuration, auth method setup, and end-to-end secret migration workflows | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/secure/non-human-identity/secrets-management/bob-modes/base-modes/vault-secret-migrator.zip) |
-
-### Custom Modes Resources
-
-- 🔧 [All Modes Repository](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/secure/non-human-identity/secrets-management/bob-modes)
-
 ### Demo Videos
 
 #### Getting Started Videos
@@ -314,7 +290,6 @@ Extend Bob's functionality with custom modes tailored for Non-human Identity wor
 Take the next step by choosing the path that best fits your needs:
 
 - **Explore the fundamentals** in the [Overview](#overview), [Architecture](#architecture), and [Key Features](#key-features) sections
-- **Download reusable assets** from [Download Skills](#download-skills) and [Download Custom Modes](#download-custom-modes)
 - **Watch the demo** in the [Assets](#assets) section to see the Vault Secret Migrator in action
 
 [← Back to Secure](index.md)

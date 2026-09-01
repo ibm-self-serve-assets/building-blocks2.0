@@ -12,9 +12,9 @@ Technology Financial Management (TFM) and FinOps establishes a data-driven disci
 
 !!! info "📖 Implementation Resources"
 
-    For detailed implementation guides, code samples, and IBM Bob Custom Mode for IBM Apptio, see:
+    For detailed implementation guides and code samples for IBM Apptio, see:
 
-    **[FinOps Implementation Guide](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/finops/README.md)** - Complete IBM Apptio integration guide with IBM Bob Custom Mode for natural language financial operations
+    **[FinOps Implementation Guide](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/finops/README.md)** - Complete IBM Apptio integration guide for natural language financial operations
 
 ---
 
@@ -125,7 +125,7 @@ Organizations commonly leverage TFM & FinOps to:
 ### Ready to Build with Technology Financial Management & FinOps?
 
 - **Explore capabilities** in the [Capabilities & Functions](#capabilities--functions) section
-- **Review the implementation guide** for IBM Apptio integration with IBM Bob
+- **Review the implementation guide** for IBM Apptio integration
 - **Identify your use case** from the [Example Scenarios](#example-scenarios)
 
 **Get Started Now:**

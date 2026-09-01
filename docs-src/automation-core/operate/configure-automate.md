@@ -285,19 +285,6 @@ roles/
 
 ---
 
-## Download Skills
-
-| Skill Name | Description | Download Link | Version |
-|------------|-------------|---------------|---------|
-| **Configure & Automate - Ansible** | Ansible automation skill for playbook generation, configuration management, and operational workflows | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/operate/configure-automate/bob-skills/configure-automate-ansible/configure-automate-ansible.zip) | v1.0.0 |
-
-### Skills Resources
-
-- 📦 [Building Blocks Skills Repository](https://github.com/ibm-self-serve-assets/building-blocks)
-- 📖 [Skills Development Guide](../../ibm-bob/skills/contributing_to_skills.md)
-
----
-
 ## Assets
 
 ### Demo Videos
@@ -313,11 +300,9 @@ roles/
 ### Ready to Build with Configure & Automate?
 
 - **Explore the fundamentals** in the [Overview](#overview), [Architecture](#architecture), and [Core Concepts](#core-concepts) sections
-- **Download reusable assets** from [Download Skills](#download-skills)
 - **Watch the demo** to see Ansible automation in action
 
 **Get Started Now:**
-- 📥 [Download Ansible Skill](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/operate/configure-automate/bob-skills/configure-automate-ansible/configure-automate-ansible.zip)
 - 🚀 [Red Hat Ansible Automation Platform](https://www.redhat.com/en/technologies/management/ansible)
 
 ---

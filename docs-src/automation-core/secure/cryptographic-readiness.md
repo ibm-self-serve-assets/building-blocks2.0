@@ -231,18 +231,6 @@ Certain widely-used cryptographic algorithms (RSA, ECC, Diffie-Hellman) are cons
 
 ## Assets
 
-### Download Skills
-
-| Skill Name | Description | Download Link |
-|------------|-------------|---------------|
-| **Quantum Safe Skills** | Pre-built skills for IBM Guardium Cryptography Manager integration with IBM Bob | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/secure/quantum-safe/bob-skills/skills.zip) |
-
-### Download Custom Modes
-
-| Mode Name | Description | Download Link |
-|-----------|-------------|---------------|
-| **Quantum Safe Mode** | Custom Bob mode tailored for cryptographic scanning and remediation workflows | [📥 Download](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/secure/quantum-safe/bob-modes/quantum-safe.zip) |
-
 ### Demo Videos
 
 | Video Title | Description | Link |
@@ -263,8 +251,7 @@ Certain widely-used cryptographic algorithms (RSA, ECC, Diffie-Hellman) are cons
 ### Ready to Build with Cryptographic & Quantum-Safe Readiness?
 
 - **Explore the fundamentals** in the [Overview](#overview), [Architecture](#architecture), and [Core Concepts](#core-concepts) sections
-- **Download reusable assets** from [Download Skills](#download-skills) and [Download Custom Modes](#download-custom-modes)
-- **Watch the demo** to see IBM Guardium Cryptography Manager and IBM Bob in action
+- **Watch the demo** to see IBM Guardium Cryptography Manager in action
 
 **Quick links:**
 - 🚀 [Complete Implementation Guide](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/secure/quantum-safe/README.md)
