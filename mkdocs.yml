@@ -100,24 +100,27 @@ nav:
   - Automation:
       - Overview: automation-core/index.md
 
-      - Operate:
-          - Overview: automation-core/operate/index.md
-          - Infrastructure as Code: automation-core/operate/infrastructure-as-code.md
-          - Configure & Automate: automation-core/operate/configure-automate.md
-          - Workload Orchestration & Scheduling: automation-core/operate/workload-orchestration.md
+      - Core Capability:
+          - Bob+ Skills and Modes: automation-core/bob-skills-and-modes.md
 
-      - Secure:
-          - Overview: automation-core/secure/index.md
-          - Non-human Identity & Secret Management: automation-core/secure/non-human-identity.md
-          - Application Risk & Continuous Compliance: automation-core/secure/application-risk.md
-          - Cryptographic & Quantum-Safe Readiness: automation-core/secure/cryptographic-readiness.md
+          - Operate:
+              - Overview: automation-core/operate/index.md
+              - Infrastructure as Code: automation-core/operate/infrastructure-as-code.md
+              - Configure & Automate: automation-core/operate/configure-automate.md
+              - Workload Orchestration & Scheduling: automation-core/operate/workload-orchestration.md
 
-      - Optimize:
-          - Overview: automation-core/optimize/index.md
-          - Full-Stack Application Observability: automation-core/optimize/full-stack-observability.md
-          - Application Performance: automation-core/optimize/application-performance.md
-          - Technology Financial Management & FinOps: automation-core/optimize/technology-financial-management.md
-          - Network Performance Management: automation-core/optimize/network-performance.md
+          - Secure:
+              - Overview: automation-core/secure/index.md
+              - Non-human Identity & Secret Management: automation-core/secure/non-human-identity.md
+              - Application Risk & Continuous Compliance: automation-core/secure/application-risk.md
+              - Cryptographic & Quantum-Safe Readiness: automation-core/secure/cryptographic-readiness.md
+
+          - Optimize:
+              - Overview: automation-core/optimize/index.md
+              - Full-Stack Application Observability: automation-core/optimize/full-stack-observability.md
+              - Application Performance: automation-core/optimize/application-performance.md
+              - Technology Financial Management & FinOps: automation-core/optimize/technology-financial-management.md
+              - Network Performance Management: automation-core/optimize/network-performance.md
 
   - Bob+:
       - Quick Start with Bob Modes: ibm-bob/index.md
