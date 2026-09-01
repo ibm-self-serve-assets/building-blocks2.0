@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../ibm-bob/skills/skills.css">
-
 # Bob<span style="color:#0f62fe">+</span> Skills and Modes – Automation
 
 IBM Bob ships with purpose-built **Skills** and **Custom Modes** for every Automation building block, giving engineers an AI-assisted workflow to plan, build, configure, and operate infrastructure, security, and optimization capabilities directly from their IDE.

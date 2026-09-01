@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="./skills.css">
-
 # Skills for the Bob<span style="color:#0f62fe">+</span> IBM Technology Building Blocks
 
 This collection of [Skills for IBM Bob](https://bob.ibm.com/docs/ide/features/skills) provides IBM Bob with the expertise to quickly build applications using the [Bob<span style="color:#0f62fe">+</span> IBM Technology Building Blocks](../../index.md).   Each skill focuses on a specific Building Block and contains task-specific instructions, code patterns, examples and constraints Bob should follow when doing engineering work.

@@ -25,6 +25,7 @@ theme:
 
 extra_css:
   - stylesheets/carbon.css
+  - ibm-bob/skills/skills.css
 
 extra_javascript:
   - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
