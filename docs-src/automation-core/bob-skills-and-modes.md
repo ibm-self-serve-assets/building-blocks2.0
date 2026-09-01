@@ -6,7 +6,7 @@ IBM Bob ships with purpose-built **Skills** and **Custom Modes** for every Autom
 The Skills have been packed into a single .zip that you can easily download and install. Go to the [skills.zip page](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills.zip) and click the `Download raw file` icon at the upper-right of the page.  Copy all skill folders at either the global, `~/.bob/skills`, or project-level, `<project>/.bob/skills`
 
 <a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills.zip">
-  <img src="../ibm-bob/skills/images/download-raw-file.png" width="200">
+  <img src="../../ibm-bob/skills/images/download-raw-file.png" width="200">
 </a>
 
 ## Skill Taxonomy
@@ -17,10 +17,10 @@ Each Skill for IBM Building Blocks often aligns with an IBM product but not alwa
   <table class="skill-card" style="--accent:#d5acff; --header:#f7efff; --th:#eedcff; --first-td:#fbf6ff; --grid:#e4c9ff; --text:#160040;">
     <tbody>
       <thead><tr><th colspan="2">
-        <div class="skill-group"><img src="../ibm-bob/skills/images/automation.png" alt="" class="title-icon"><span>Automation Skills</span></div>
+        <div class="skill-group"><img src="../../ibm-bob/skills/images/automation.png" alt="" class="title-icon"><span>Automation Skills</span></div>
       </th></tr></thead>
       <tr>
-        <td><div class="skill-subgroup"><img src="../ibm-bob/skills/images/build.png" alt="" class="title-icon"><span>Build</span></div></td>
+        <td><div class="skill-subgroup"><img src="../../ibm-bob/skills/images/build.png" alt="" class="title-icon"><span>Build</span></div></td>
         <td>
             <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills/ibm-cloud/SKILL.md">Using the IBM Cloud CLI; ibmcloud</a>
             <br>Work with IBM Cloud by using the stand-alone `ibmcloud` CLI or IBM Cloud Shell.</p>
@@ -35,7 +35,7 @@ Each Skill for IBM Building Blocks often aligns with an IBM product but not alwa
         </td>
       </tr>
       <tr>
-        <td><div class="skill-subgroup"><img src="../ibm-bob/skills/images/modernize.png" alt="" class="title-icon"><span>Optimize</span></div></td>
+        <td><div class="skill-subgroup"><img src="../../ibm-bob/skills/images/modernize.png" alt="" class="title-icon"><span>Optimize</span></div></td>
         <td>
             <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills/automated-resource-mgmt-turbonomic/SKILL.md">Automated Resource Management (ARM): Turbonomic</a>
             <br>Automates application resource management at scale with the precision required to assure application performance. It continuously analyzes and optimizes compute, storage, and network resources in real time, helping organizations improve application resiliency, maximize infrastructure utilization, reduce operational costs, and ensure applications always receive the resources.</p>
@@ -44,7 +44,7 @@ Each Skill for IBM Building Blocks often aligns with an IBM product but not alwa
         </td>
       </tr>
       <tr>
-        <td><div class="skill-subgroup"><img src="../ibm-bob/skills/images/optimize.png" alt="" class="title-icon"><span>Secure</span></div></td>
+        <td><div class="skill-subgroup"><img src="../../ibm-bob/skills/images/optimize.png" alt="" class="title-icon"><span>Secure</span></div></td>
         <td>
             <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/ibm-bob/skills/non-human-identity-vault/SKILL.md">Non-human Identity: Vault</a>
             <br>Coming soon</p>
