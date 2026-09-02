@@ -97,6 +97,8 @@ nav:
           - Zero-Copy Lakehouse: data-core/query-engines/zero-copy-lakehouse/index.md
           - Serverless Vector: data-core/query-engines/serverless-vector/index.md
 
+      - Skills and Modes: data-core/bob-skills-and-modes.md
+
   - Automation:
       - Overview: automation-core/index.md
 
