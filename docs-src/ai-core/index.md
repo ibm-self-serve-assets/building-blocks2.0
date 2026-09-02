@@ -9,7 +9,7 @@ This section brings together three pillars — **Agents**, the **AI Control Plan
 The AI Core section is organized into three pillars that work together across the full AI lifecycle:
 
 - **Agents** — Build, orchestrate, and deploy intelligent AI agents using IBM watsonx Orchestrate. Covers the full journey from creating individual agents with the ADK to coordinating multi-agent systems across enterprise systems and frameworks.
-- **AI Control Plane** — Enforce, evaluate, monitor, and govern AI in production. Covers agent controls, model evaluation, agent observability, real-time guardrails, and regulatory compliance — powered by IBM watsonx.governance and IBM watsonx Orchestrate.
+- **AI Control Plane** — Evaluate, enforce, and govern AI in production. Covers agent evaluation and observability, runtime policy controls, AI cost management, regulatory compliance, and lifecycle management — powered by IBM watsonx.governance and IBM watsonx Orchestrate.
 - **AI Engineering** — IBM Bob, an AI Agent purpose-built for the Software Development Lifecycle. Spans planning, coding, testing, documentation, modernization, and CI/CD — the development partner across every building block on this platform.
 
 Every building block in this section comes with purpose-built **Bob Skills and Custom Modes** — giving developers an AI-assisted workflow to build, configure, and deploy each capability faster, directly from their IDE.
@@ -37,11 +37,10 @@ Enforce, evaluate, monitor, and govern AI in production using IBM watsonx.govern
 
 | Building Block | What It Does |
 |---------------|-------------|
-| **[Agent Controls](agents/agent-controls.md)** | Enforce safety, compliance, and reliability policies across agents, tools, and models — PII filtering, content guardrails, secrets detection, SQL injection prevention, rate limiting, and model fallback — as configuration, not code |
-| **[Model Evaluation](ai-trust/model-evaluation.md)** | Evaluate AI and ML models for performance quality, fairness, reliability, drift, and bias throughout the AI lifecycle |
-| **[Agent Ops](ai-trust/agent-ops.md)** | Evaluate, observe, and optimize AI agents — from benchmarking and red-teaming to cost, latency, and token observability |
-| **[Real-Time Guardrails](ai-trust/real-time-guardrails.md)** | Enforce safety boundaries at input and output — blocking harmful content, PII, jailbreaks, and hallucinations with configurable PASS/FLAG/BLOCK thresholds |
+| **[Agent Ops](ai-trust/agent-ops.md)** | Evaluate, observe, and optimize your AI agents throughout the lifecycle — and enforce runtime policy controls (guardrails, PII filtering, rate limiting, model fallback) as configuration, not code |
+| **[AI Cost Management](ai-trust/ai-cost-management.md)** | Track, allocate, and optimize the cost of AI workloads across the enterprise *(coming soon)* |
 | **[AI Compliance](ai-trust/ai-compliance.md)** | Map AI use cases to regulations (EU AI Act, NIST AI RMF), manage risk assessments, and report compliance posture across the enterprise |
+| **[Lifecycle Management](ai-trust/lifecycle-management.md)** | Manage AI models and agents across their full lifecycle, from onboarding to retirement *(coming soon)* |
 
 ### AI Engineering
 
