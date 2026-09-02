@@ -65,19 +65,48 @@ Each Skill for IBM Building Blocks often aligns with an IBM product but not alwa
 
 Instructions and related files for these custom modes can be found in their respective repository.
 
-### Operate
-- [Ansible Ops](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/build-and-deploy/Iaas/bob-modes/base-modes): Ansible Operations with Ansible playbook to deploy the Retail Application on RedHat OpenShift Cluster.
+<div class="skills-listing">
 
-### Secure
-- [Secrets Management](https://github.com/ibm-self-serve-assets/building-blocks/tree/main/build-and-deploy/non-human-identity/secrets-management/bob-modes/base-modes): Secrets Management via IBM Hashicorp Vault.
-- [Application Risk & Continuous Compliance](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip): Unified Vulnerability and Certificate Intelligence via IBM Concert.
-- [Cryptographic & Quantum-Safe Readiness](https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip): Discover, govern, and migrate cryptographic assets to quantum-safe algorithms using IBM Guardium Cryptography Manager.
+  <table class="skill-card" style="--accent:#d5acff; --header:#f7efff; --th:#eedcff; --first-td:#fbf6ff; --grid:#e4c9ff; --text:#160040;">
+    <tbody>
+      <thead><tr><th colspan="2">
+        <div class="skill-group"><img src="../../ibm-bob/skills/images/automation.png" alt="" class="title-icon"><span>Automation Modes</span></div>
+      </th></tr></thead>
+      <tr>
+        <td><div class="skill-subgroup"><img src="../../ibm-bob/skills/images/build.png" alt="" class="title-icon"><span>Operate</span></div></td>
+        <td>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/tree/main/build-and-deploy/Iaas/bob-modes/base-modes">Ansible Ops</a>
+            <br>Ansible Operations with Ansible playbook to deploy the Retail Application on RedHat OpenShift Cluster.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="skill-subgroup"><img src="../../ibm-bob/skills/images/optimize.png" alt="" class="title-icon"><span>Secure</span></div></td>
+        <td>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/tree/main/build-and-deploy/non-human-identity/secrets-management/bob-modes/base-modes">Secrets Management</a>
+            <br>Secrets Management via IBM Hashicorp Vault.</p>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip">Application Risk & Continuous Compliance</a>
+            <br>Unified Vulnerability and Certificate Intelligence via IBM Concert.</p>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/raw/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip">Cryptographic & Quantum-Safe Readiness</a>
+            <br>Discover, govern, and migrate cryptographic assets to quantum-safe algorithms using IBM Guardium Cryptography Manager.</p>
+        </td>
+      </tr>
+      <tr>
+        <td><div class="skill-subgroup"><img src="../../ibm-bob/skills/images/modernize.png" alt="" class="title-icon"><span>Optimize</span></div></td>
+        <td>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip">Automated Resilience & Compliance</a>
+            <br>Unified Vulnerability and Certificate Intelligence via IBM Concert.</p>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip">Automated Resource Management</a>
+            <br>Resource Optimization & Cost Control with IBM Turbonomic.</p>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/finops/optimize/finops/bob-modes/base-modes/cloudability-api.zip">Technology Financial Management & FinOps</a>
+            <br>Maximize Cloud Value Through FinOps with IBM Apptio.</p>
+            <p><a href="https://github.com/ibm-self-serve-assets/building-blocks/blob/finops/observe/application-observability/bob-modes/base-modes/application-observability.zip">Full-Stack Application Observability</a>
+            <br>Connect Bob with the Instana MCP server for automated, real-time visibility across every tier of hybrid applications.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-### Optimize
-- [Automated Resilience & Compliance](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip): Unified Vulnerability and Certificate Intelligence via IBM Concert.
-- [Automated Resource Management](https://github.com/ibm-self-serve-assets/building-blocks/blob/main/optimize/automated-resilience-and-compliance/bob-modes/base-modes/application-resilience.zip): Resource Optimization & Cost Control with IBM Turbonomic.
-- [Technology Financial Management & FinOps](https://github.com/ibm-self-serve-assets/building-blocks/blob/finops/optimize/finops/bob-modes/base-modes/cloudability-api.zip): Maximize Cloud Value Through FinOps with IBM Apptio.
-- [Full-Stack Application Observability](https://github.com/ibm-self-serve-assets/building-blocks/blob/finops/observe/application-observability/bob-modes/base-modes/application-observability.zip): Connect Bob with the Instana MCP server for automated, real-time visibility across every tier of hybrid applications.
+</div>
 
 ---
 
