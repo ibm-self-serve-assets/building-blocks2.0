@@ -8,6 +8,8 @@ The Agents building blocks provide ready-to-use accelerators that make it easier
 
 ![Agents Building Blocks Architecture](images/agents-architecture.png)
 
+
+
 ## Building Blocks
 
 | Building Block | What It Does |
