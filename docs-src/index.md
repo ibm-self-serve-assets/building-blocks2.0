@@ -28,16 +28,38 @@ Reusable, enterprise-ready AI building blocks that accelerate agent adoption by 
 - **AI Control Plane**
 AI Control Plane building blocks provide tools to evaluate AI models, test and monitor AI agents, enforce real-time safety guardrails, and manage regulatory compliance. They include model evaluation, agent ops, real-time guardrails, and AI compliance.
 
-**Data Core Capabilities**
+**[Data Core Capabilities](data-core/index.md)**
 
-- **Integration:**
- This is where data is brought together from different systems through pipelines, streaming, replication, unstructured ingestion, and observability. From a business perspective, this helps reduce silos and improves visibility across operations.
+- **[Context](data-core/context/index.md)**  
+  Where data is brought together and made trusted — combining real-time events, metadata enrichment, lineage, quality signals, and observability to give applications and AI the business context they need.
 
-- **Intelligence:**
-This is where the data becomes more useful and trusted. Quality checks, lineage, enrichment, and natural-language access help teams understand whether the data is accurate, explainable, and ready for decision-making.
+    | Building Block | What It Enables |
+    |---|---|
+    | [Context Hub](data-core/context/context-hub/index.md) | Combine real-time events, enterprise data, metadata, lineage and policy context for AI and analytics |
+    | [Real-Time Streaming](data-core/context/real-time-streaming/index.md) | Stream, transform and govern continuously changing data |
+    | [Metadata Enrichment & Data Quality](data-core/context/metadata-enrichment/index.md) | Add business meaning, quality rules, descriptions, terms, classifications and relationships to technical data |
+    | [Data Observability](data-core/context/data-observability/index.md) | Detect pipeline and dataset issues before downstream users and AI are impacted |
 
-- **Retrieval:**
- This is the consumption layer. It enables users, applications, analytics, and AI solutions to access the right data through search, vector retrieval, NoSQL access, and federated analytics. 
+- **[Pipelines](data-core/pipelines/index.md)**  
+  Where data is prepared and moved into forms that applications, search systems, analytics, and AI can consume — covering RAG, document ingestion, Text2SQL, ETL/ELT, and large-file synchronization.
+
+    | Building Block | What It Enables |
+    |---|---|
+    | [RAG](data-core/pipelines/rag/index.md) | Ground applications and agents with governed enterprise knowledge |
+    | [UDI](data-core/pipelines/udi/index.md) | Ingest, parse, cleanse, chunk, enrich and prepare documents for RAG and AI |
+    | [Text2SQL](data-core/pipelines/text2sql/index.md) | Convert natural-language questions into SQL using enriched metadata as context |
+    | [ETL / ELT](data-core/pipelines/etl/index.md) | Build governed batch integration flows across source, transformation and target stages |
+    | [Data Sync](data-core/pipelines/data-sync/index.md) | Synchronize large file sets and repositories securely across WAN and hybrid environments |
+
+- **[Query Engines](data-core/query-engines/index.md)**  
+  The consumption layer — enabling users, applications, analytics, and AI to access the right data through federated SQL, vector retrieval, and serverless compute without unnecessary data movement.
+
+    | Building Block | What It Enables |
+    |---|---|
+    | [Zero-Copy Lakehouse](data-core/query-engines/zero-copy-lakehouse/index.md) | Query data across distributed platforms without unnecessary copying |
+    | [Serverless Vector](data-core/query-engines/serverless-vector/index.md) | Elastic vector storage for semantic search, RAG and agent memory patterns |
+
+---
 
 **Automation Core Capabilities**
 
