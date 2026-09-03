@@ -61,13 +61,32 @@ AI Control Plane building blocks provide tools to evaluate AI models, test and m
 
 ---
 
-**Automation Core Capabilities**
+**[Automation Core Capabilities](automation-core/index.md)**
 
-- **Build**
-Enables secure, automated integration and workflow orchestration across applications and clouds. These building blocks deliver identity and access control, infrastructure automation, and AI-assisted development to support faster, governed deployments.
+- **[Operate](automation-core/operate/index.md)**
+  Automates infrastructure provisioning, configuration management, and workload scheduling to deliver consistent, repeatable pipelines across hybrid cloud environments — reducing manual toil and enabling teams to focus on higher-value work.
 
-- **Secure**
-Provides end-to-end security across identities, applications, and infrastructure using IBM Verify and HashiCorp Vault for secure access and centralized secrets management. It ensures protection of credentials, tokens, and certificates across their lifecycle with strong governance and control. Advanced capabilities from IBM Quantum Safe enable quantum-resistant encryption and future-ready data protection across hybrid environments.
+    | Building Block | What It Enables |
+    |---|---|
+    | [Infrastructure as Code](automation-core/operate/infrastructure-as-code.md) | Declarative, version-controlled provisioning across hybrid and multi-cloud environments |
+    | [Configure & Automate](automation-core/operate/configure-automate.md) | Agentless, idempotent configuration management and IT automation at enterprise scale |
+    | [Workload Orchestration & Scheduling](automation-core/operate/workload-orchestration.md) | Unified scheduling of containers, VMs, batch jobs, and binaries under a single control plane |
 
-- **Optimize**
-Delivers continuous monitoring, policy enforcement, and self-healing workflows. These building blocks enable cost-efficient operations, dynamic resource management, and real-time observability to maintain optimal performance, governance, and financial efficiency across hybrid and multicloud environments.
+- **[Secure](automation-core/secure/index.md)**
+  Protects enterprise applications, data, and infrastructure through comprehensive identity management, continuous compliance monitoring, and quantum-safe cryptographic capabilities.
+
+    | Building Block | What It Enables |
+    |---|---|
+    | [Non-human Identity & Secret Management](automation-core/secure/non-human-identity.md) | Centralized identity governance and dynamic secrets management across hybrid environments |
+    | [Application Risk & Continuous Compliance](automation-core/secure/application-risk.md) | Unified application risk visibility, CVE monitoring, and automated compliance posture management |
+    | [Cryptographic & Quantum-Safe Readiness](automation-core/secure/cryptographic-readiness.md) | Discover, govern, and migrate cryptographic assets to quantum-safe algorithms |
+
+- **[Optimize](automation-core/optimize/index.md)**
+  Continuously improves observability, application performance, cost efficiency, and network health through intelligent automation and analytics across hybrid cloud environments.
+
+    | Building Block | What It Enables |
+    |---|---|
+    | [Full-Stack Application Observability](automation-core/optimize/full-stack-observability.md) | Automated, real-time visibility across every tier of hybrid applications |
+    | [Application Performance](automation-core/optimize/application-performance.md) | Demand-driven resource optimization balancing performance and cost continuously |
+    | [Technology Financial Management & FinOps](automation-core/optimize/technology-financial-management.md) | Granular cloud spend visibility, cost allocation, and forecasting |
+    | [Network Performance Management](automation-core/optimize/network-performance.md) | High-frequency network monitoring, capacity planning, and AI-powered anomaly detection |
