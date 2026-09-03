@@ -20,13 +20,36 @@ Whether building new cloud-native applications, modernizing legacy workloads, mi
 
 ## Capability Areas
 
-**AI Core Capabilities**
+**[AI Core Capabilities](ai-core/index.md)**
 
-- **Agents**
-Reusable, enterprise-ready AI building blocks that accelerate agent adoption by enabling the design, orchestration, and deployment of intelligent agents across business workflows.
+- **[Agents](ai-core/agents/index.md)**
+  Enterprise-ready building blocks for creating, orchestrating, and deploying autonomous AI agents that integrate with enterprise systems and business workflows.
 
-- **AI Control Plane**
-AI Control Plane building blocks provide tools to evaluate AI models, test and monitor AI agents, enforce real-time safety guardrails, and manage regulatory compliance. They include model evaluation, agent ops, real-time guardrails, and AI compliance.
+    | Building Block | What It Enables |
+    |---|---|
+    | [Agent Builder](ai-core/agents/agent-builder.md) | Create and deploy LLM-backed, tool-calling agents — from local development to production |
+    | [Multi-Agent Orchestration](ai-core/agents/multi-agent-orchestration.md) | Coordinate agents and route LLM calls across providers via open standards (A2A, MCP, AI Gateway) |
+
+- **[AI Control Plane](ai-core/ai-trust/index.md)**
+  Evaluate, observe, govern, and enforce policy across every AI agent and model in production — making AI safe and compliant at enterprise scale.
+
+    | Building Block | What It Enables |
+    |---|---|
+    | [Agent Ops](ai-core/ai-trust/agent-ops.md) | Evaluate, observe, and govern agents — benchmarking, red-teaming, runtime guardrails, cost tracking |
+    | [AI Compliance](ai-core/ai-trust/ai-compliance.md) | Map AI use cases to regulations, manage risk assessments, and report compliance posture |
+    | [AI Cost Management](ai-core/ai-trust/ai-cost-management.md) | Track, allocate, and optimize the cost of AI workloads across the enterprise |
+    | [Lifecycle Management](ai-core/ai-trust/lifecycle-management.md) | Manage AI models and agents from onboarding through retirement |
+
+- **[AI Engineering](ai-core/ai-engineering/index.md)**
+  Accelerates every phase of software delivery — building new systems with AI assistance and systematically modernizing legacy applications.
+
+    | Building Block | What It Enables |
+    |---|---|
+    | [Agentic SDLC](ai-core/ai-engineering/agentic-sdlc.md) | IDE-native AI agent spanning planning, coding, testing, documentation, modernization, and CI/CD |
+    | [Code Modernization](ai-core/ai-engineering/code-modernization.md) | Transform legacy Java, mainframe, IBM Z, and IBM i applications into modern cloud-native systems |
+    | [Integration as Code](ai-core/ai-engineering/integration-as-code.md) | Connect SaaS apps, on-premise systems, APIs, and event streams through a low-code iPaaS model |
+    | [Headless Bob](ai-core/ai-engineering/headless-bob.md) | Run Bob autonomously in CI/CD pipelines, scheduled jobs, and event-driven automations |
+    | [Context Engineering](ai-core/ai-engineering/context-engineering.md) | Design and optimise the context agents and LLMs receive — prompt architecture, RAG patterns, context window management |
 
 **[Data Core Capabilities](data-core/index.md)**
 
